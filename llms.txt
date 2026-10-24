@@ -1,0 +1,51 @@
+# Earth Number
+
+> 数字から、地球を感じる。自然科学の31テーマを可視化した日本語のインタラクティブ・アトラス。
+
+## Primary pages
+
+- [ホーム](https://djnaoyaman.github.io/earthnumber/): 31展示と出典・推定条件
+- [作者と作品](https://djnaoyaman.github.io/earthnumber/author.html): 宮崎直哉のプロフィール
+- [全文テキスト](https://djnaoyaman.github.io/earthnumber/llms-full.txt): 展示内容と出典を読むためのテキスト
+
+## Reading guidance
+
+- Counter values are estimated from elapsed time, not live observations.
+- Retain the source year, scope, units and uncertainty when citing numbers.
+- Distinguish bulk Earth from crust, elements from minerals, and total mass from recoverable reserves.
+- Numeric claims must be read together with their stated assumptions.
+- Educational comparisons are not health or supplement efficacy claims.
+
+## Exhibits
+
+- [地球と惑星の距離](https://djnaoyaman.github.io/earthnumber/#distance)
+- [静止していても、旅の途中。](https://djnaoyaman.github.io/earthnumber/#motion)
+- [薄い、薄い、生命の居場所。](https://djnaoyaman.github.io/earthnumber/#atmosphere)
+- [足元から、中心へ。](https://djnaoyaman.github.io/earthnumber/#inside)
+- [地球は、何でできている？](https://djnaoyaman.github.io/earthnumber/#elements)
+- [45.4億年を、たった1日に。](https://djnaoyaman.github.io/earthnumber/#time)
+- [青い星の、水の量。](https://djnaoyaman.github.io/earthnumber/#water)
+- [地球の呼吸を、数字で。](https://djnaoyaman.github.io/earthnumber/#cycles)
+- [光で旅すると。](https://djnaoyaman.github.io/earthnumber/#light)
+- [砂粒と、星の数。](https://djnaoyaman.github.io/earthnumber/#stars)
+- [太陽の1時間。人類の1年。](https://djnaoyaman.github.io/earthnumber/#solar)
+- [地球は、絶えず光っている。](https://djnaoyaman.github.io/earthnumber/#lightning)
+- [マグニチュードの、一段。](https://djnaoyaman.github.io/earthnumber/#quake)
+- [見えない空気の重さ。](https://djnaoyaman.github.io/earthnumber/#airmass)
+- [細胞の中にある、長い旅。](https://djnaoyaman.github.io/earthnumber/#dna)
+- [哺乳類の重さを、100に分ける。](https://djnaoyaman.github.io/earthnumber/#mammals)
+- [まだ、名前のない生命。](https://djnaoyaman.github.io/earthnumber/#species)
+- [人工物と、生きものの重さ。](https://djnaoyaman.github.io/earthnumber/#humanmass)
+- [プラスチックを、一本の紐に。](https://djnaoyaman.github.io/earthnumber/#plastic)
+- [空に浮かぶ、500トン。](https://djnaoyaman.github.io/earthnumber/#cloud)
+- [毎日、宇宙が少し届く。](https://djnaoyaman.github.io/earthnumber/#dust)
+- [長くなる、一日。](https://djnaoyaman.github.io/earthnumber/#rotation)
+- [まだ測りきれていない、海底。](https://djnaoyaman.github.io/earthnumber/#seafloor)
+- [海には金がある。ほんの、わずか。](https://djnaoyaman.github.io/earthnumber/#gold)
+- [地球を縫う、海底の山脈。](https://djnaoyaman.github.io/earthnumber/#ridge)
+- [爪のように伸びる、大陸の距離。](https://djnaoyaman.github.io/earthnumber/#plates)
+- [足元にある、もうひとつの熱。](https://djnaoyaman.github.io/earthnumber/#coreheat)
+- [森の地下で、つながる一個体。](https://djnaoyaman.github.io/earthnumber/#fungus)
+- [小さな足が、2京匹。](https://djnaoyaman.github.io/earthnumber/#ants)
+- [ひとりの体に、兆の隣人。](https://djnaoyaman.github.io/earthnumber/#bacteria)
+- [鉄を中心に、地球の材料を。](https://djnaoyaman.github.io/earthnumber/#minerals)

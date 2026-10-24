@@ -1,0 +1,2 @@
+'use strict';
+document.querySelectorAll('[data-share]').forEach(button=>button.addEventListener('click',async()=>{const status=document.querySelector('.share-status');const u=new URL(location.href);u.search='';const data={title:document.title,text:'数字から、地球を感じる。Earth Number',url:u.href};try{if(navigator.share){await navigator.share(data);status.textContent='共有しました。'}else{await navigator.clipboard.writeText(data.url);status.textContent='URLをコピーしました。'}}catch(e){if(e.name!=='AbortError'){status.textContent='このURLを共有できます。 '+data.url}}}));
