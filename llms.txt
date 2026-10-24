@@ -49,3 +49,10 @@
 - [小さな足が、2京匹。](https://djnaoyaman.github.io/earthnumber/#ants)
 - [ひとりの体に、兆の隣人。](https://djnaoyaman.github.io/earthnumber/#bacteria)
 - [鉄を中心に、地球の材料を。](https://djnaoyaman.github.io/earthnumber/#minerals)
+
+
+## 新しい3展示
+
+- [月が遠ざかる距離](https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession)
+- [雨1 mmの水量](https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume)
+- [深さと水圧](https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure)

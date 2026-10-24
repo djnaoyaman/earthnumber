@@ -321,3 +321,19 @@ URL https://djnaoyaman.github.io/earthnumber/#minerals
 - NASA · Earth mass ↗ https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
 - DATA / Morgan & Anders (1980) · Composition model ↗ https://doi.org/10.1073/pnas.77.12.6973
 
+
+
+## 新しい3展示
+
+- [月が遠ざかる距離](https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession)
+- [雨1 mmの水量](https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume)
+- [深さと水圧](https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure)
+
+32 / EARTH & MOON 少しずつ、遠くへ。 月は一年に、 約3.8 cm遠ざかる。 レーザー測距が捉えた、小さな変化。 時間を進めて、積み重なる距離を見てみる。 比較する年数 100年 ⏪ ■ ▶ ⏩ 手動で操作できます INCREASE IN DISTANCE / CONSTANT RATE MODEL 3.80 m 現在の代表的な後退速度を一定として計算。 位置の変化を大きく誇張した模式図。地球と月の大きさ・距離は同一縮尺ではありません。 NASAの月レーザー測距の解説に基づく概数3.8 cm/年を使用。増加分 = 0.038 m × 年数。潮汐による相互作用に関係します。速度は地球史を通じて一定ではなく、遠い過去・未来の距離をこの式で予測するものではありません。再生は100年を約10秒に圧縮します。 NASA · Lunar laser ranging ↗
+https://www.nasa.gov/missions/laser-beams-reflected-between-earth-and-moon-boost-science/
+
+33 / RAINFALL 雨1 mmは、少ない？ 屋根に降る雨は、 何リットル？ 雨量は、水の深さ。 面積を掛けると、まとまった水の量になる。 雨を受ける面積 1 m²の地面 100 m²の屋根（仮定） 10,000 m²の校庭（仮定） 1 km²の街（仮定） 降水量 1 mm ⏪ ■ ▶ ⏩ 手動で操作できます PRECIPITATION VOLUME 100 L 水の質量は約100 kg 粒の数・速度は雨量を再現しない模式表現。実測の天気ではありません。 水量[L] = 降水量[mm] × 水平面積[m²]。1 mm × 1 m² = 0.001 m³ = 1 L。水の密度を1 kg/Lと仮定して質量へ換算。均一に降った総量で、蒸発・浸透・漏れなどを引いた実際の回収量ではありません。再生は比較する降水量を毎秒2 mmずつ増やす演出で、雨の実況や予報ではありません。 USGS · Rainfall volume ↗
+https://www.usgs.gov/water-science-school/science/water-qa-how-much-water-falls-during-a-storm
+
+34 / OCEAN PRESSURE 深さに、重さがある。 潜るほどに、 水の柱が重くなる。 海面から深海へ。 頭上の水が生む、圧力の違い。 水深 100 m ⏪ ■ ▶ ⏩ 手動で操作できます ABSOLUTE PRESSURE / SIMPLIFIED MODEL 10.9 atm 水による増加分 約9.9 atm / 大気圧1 atmを含む → ← 潜水艇は模式図。物体の位置・大きさ・移動速度は実際の縮尺ではありません。 絶対圧力 P = P₀ + ρgh。P₀=101,325 Pa、海水密度ρ=1,025 kg/m³、重力加速度g=9.80665 m/s²を一定とする簡略模型。水深約10 mごとに約1 atm増加する目安と対応します。深海では圧縮・密度・重力の変化があるため精密な実測値ではありません。再生では毎秒200 mずつ模型の深さを進めます。 NOAA · Pressure and ocean depth ↗
+https://oceanservice.noaa.gov/facts/pressure.html

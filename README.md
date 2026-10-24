@@ -2,7 +2,7 @@
 
 Interactive Japanese science atlas. Buildless static HTML/CSS/JavaScript in the repository root.
 
-- Main experience: 31 exhibits, each with source links, scientific assumptions and units.
+- Main experience: 34 exhibits across the main page (31) and discoveries.html (3), each with source links, scientific assumptions and units.
 - Author page: `author.html`. Profile/portfolio text adapted from the existing gooooooooood expression author page source available in the workspace.
 - Brand assets: supplied MINERALion JPEG and THEMAROX PDF; whitespace cropped, artwork and aspect ratio preserved. Footer links to official sites.
 - Colors: primary #0033AD; headings #0A1F5C; panels #EEF2FB; rules #BFC8E0; white. Supporting scientific colors identify compared materials.
