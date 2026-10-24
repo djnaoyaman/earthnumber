@@ -56,3 +56,44 @@
 - [月が遠ざかる距離](https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession)
 - [雨1 mmの水量](https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume)
 - [深さと水圧](https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure)
+
+
+## 展示一覧と分類
+
+https://djnaoyaman.github.io/earthnumber/exhibits.html
+
+基本17展示・発展17展示。8ジャンル。編集上の学習目安であり、公式の教科書対応表ではありません。
+- 基本的知識 / 宇宙・天体 / 地球と惑星の距離 / https://djnaoyaman.github.io/earthnumber/index.html#distance
+- 発展的知識 / 宇宙・天体 / 宇宙を進む速さ / https://djnaoyaman.github.io/earthnumber/index.html#motion
+- 発展的知識 / 大気・気象 / 大気の薄さ / https://djnaoyaman.github.io/earthnumber/index.html#atmosphere
+- 発展的知識 / 地形・地球内部 / 地球の内側 / https://djnaoyaman.github.io/earthnumber/index.html#inside
+- 発展的知識 / 元素・物質 / 地球をつくる元素 / https://djnaoyaman.github.io/earthnumber/index.html#elements
+- 基本的知識 / 地形・地球内部 / 45.4億年の時計 / https://djnaoyaman.github.io/earthnumber/index.html#time
+- 基本的知識 / 海洋・水循環 / すべての水を一滴に / https://djnaoyaman.github.io/earthnumber/index.html#water
+- 発展的知識 / 環境・人間活動 / 森林と炭素の循環 / https://djnaoyaman.github.io/earthnumber/index.html#cycles
+- 基本的知識 / 物理・エネルギー / 光の速さで旅する / https://djnaoyaman.github.io/earthnumber/index.html#light
+- 発展的知識 / 宇宙・天体 / 宇宙の星と砂粒 / https://djnaoyaman.github.io/earthnumber/index.html#stars
+- 発展的知識 / 物理・エネルギー / 太陽のエネルギー / https://djnaoyaman.github.io/earthnumber/index.html#solar
+- 基本的知識 / 大気・気象 / 世界の雷の数 / https://djnaoyaman.github.io/earthnumber/index.html#lightning
+- 発展的知識 / 地形・地球内部 / 地震エネルギー / https://djnaoyaman.github.io/earthnumber/index.html#quake
+- 基本的知識 / 大気・気象 / 空気の総質量 / https://djnaoyaman.github.io/earthnumber/index.html#airmass
+- 発展的知識 / 生命・生態系 / DNAをつなぐ距離 / https://djnaoyaman.github.io/earthnumber/index.html#dna
+- 発展的知識 / 生命・生態系 / 哺乳類のバイオマス / https://djnaoyaman.github.io/earthnumber/index.html#mammals
+- 基本的知識 / 生命・生態系 / 名前のない生物 / https://djnaoyaman.github.io/earthnumber/index.html#species
+- 発展的知識 / 環境・人間活動 / 人工物と生命の重さ / https://djnaoyaman.github.io/earthnumber/index.html#humanmass
+- 基本的知識 / 環境・人間活動 / プラスチックの長さ / https://djnaoyaman.github.io/earthnumber/index.html#plastic
+- 基本的知識 / 大気・気象 / 雲の水滴の重さ / https://djnaoyaman.github.io/earthnumber/index.html#cloud
+- 基本的知識 / 宇宙・天体 / 宇宙からの塵 / https://djnaoyaman.github.io/earthnumber/index.html#dust
+- 発展的知識 / 宇宙・天体 / 一日の長さの変化 / https://djnaoyaman.github.io/earthnumber/index.html#rotation
+- 基本的知識 / 海洋・水循環 / 海底の未測量領域 / https://djnaoyaman.github.io/earthnumber/index.html#seafloor
+- 発展的知識 / 元素・物質 / 海水中の金 / https://djnaoyaman.github.io/earthnumber/index.html#gold
+- 基本的知識 / 地形・地球内部 / 海底の山脈 / https://djnaoyaman.github.io/earthnumber/index.html#ridge
+- 基本的知識 / 地形・地球内部 / プレートの動く速さ / https://djnaoyaman.github.io/earthnumber/index.html#plates
+- 発展的知識 / 地形・地球内部 / 地球内部の温度 / https://djnaoyaman.github.io/earthnumber/index.html#coreheat
+- 基本的知識 / 生命・生態系 / 巨大な菌類個体 / https://djnaoyaman.github.io/earthnumber/index.html#fungus
+- 基本的知識 / 生命・生態系 / 地球のアリの数 / https://djnaoyaman.github.io/earthnumber/index.html#ants
+- 発展的知識 / 生命・生態系 / 体内の細菌の数 / https://djnaoyaman.github.io/earthnumber/index.html#bacteria
+- 発展的知識 / 元素・物質 / 鉄と地球のミネラル / https://djnaoyaman.github.io/earthnumber/index.html#minerals
+- 発展的知識 / 宇宙・天体 / 月が遠ざかる距離 / https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession
+- 基本的知識 / 海洋・水循環 / 雨1 mmの水量 / https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume
+- 基本的知識 / 海洋・水循環 / 深さで変わる水圧 / https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure

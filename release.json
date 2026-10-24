@@ -1,5 +1,7 @@
 {
-  "release": "2026-10-24-expansion-1",
+  "release": "2026-10-24-catalog",
   "exhibits": 34,
-  "new_exhibits": 3
+  "basic": 17,
+  "advanced": 17,
+  "genres": 8
 }

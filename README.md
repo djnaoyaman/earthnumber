@@ -27,3 +27,8 @@ Published with GitHub Pages from `main` / repository root. Every push to `main` 
 - Author: https://djnaoyaman.github.io/earthnumber/author.html
 - Additional ideas: [100 visualization candidates](CONTENT_BACKLOG.md), not yet implemented.
 - GA4 tag: G-BRYWJ6L872 on both pages; receiving data in the Analytics account has not been verified.
+
+
+## Exhibit catalog
+
+All 34 exhibits are listed at `exhibits.html`, grouped first by learning level (17 basic / 17 advanced), then by eight genres. This is an editorial learning guide, not an official syllabus mapping. Catalog data is maintained in `catalog-data.js`; the main-page menu consumes the same data. The catalog supports level, genre and keyword filtering, shareable query parameters and a no-JavaScript static listing. A keyboard-accessible back-to-top control is available on all four pages.
