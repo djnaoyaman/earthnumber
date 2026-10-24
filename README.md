@@ -21,4 +21,9 @@ Syntax checked all four application scripts plus motion.js. Browser tested index
 
 ## Publication
 
-Use the Sites workflow helper to push matching source and package `dist/` with `.openai/hosting.json`. Site identity is tracked in that manifest. No dependency install or compilation is required.
+Published with GitHub Pages from `main` / repository root. Every push to `main` triggers publication. No dependency installation or compilation is required.
+
+- Website: https://djnaoyaman.github.io/earthnumber/
+- Author: https://djnaoyaman.github.io/earthnumber/author.html
+- Additional ideas: [100 visualization candidates](CONTENT_BACKLOG.md), not yet implemented.
+- GA4 tag: G-BRYWJ6L872 on both pages; receiving data in the Analytics account has not been verified.
