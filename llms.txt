@@ -97,3 +97,6 @@ https://djnaoyaman.github.io/earthnumber/exhibits.html
 - 発展的知識 / 宇宙・天体 / 月が遠ざかる距離 / https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession
 - 基本的知識 / 海洋・水循環 / 雨1 mmの水量 / https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume
 - 基本的知識 / 海洋・水循環 / 深さで変わる水圧 / https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure
+
+## 読みやすさ
+全34展示を小学4年生を目安に編集。難しい言葉と単位のふりがな、動かし方、図の見方、見積もりの注意点を掲載。動く図は測定値そのものではなく、本文に示した条件で計算した模型です。

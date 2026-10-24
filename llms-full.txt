@@ -1,380 +1,491 @@
 # Earth Number
 
-数字から、地球を感じる。宮崎直哉が編集する自然科学のインタラクティブ・アトラス。
+全34展示。小学4年生を目安に編集。ブラウザーで難しい言葉と単位にふりがなを表示。
 
-## 読み取り上の前提
+カウンターは平均値や代表値から計算する模型で、実測の実況ではありません。学習レベルは内容の目安で、読解力の分類ではありません。
 
-統計の対象年・定義・模型の前提は展示ごとに異なります。カウンターは概数と経過時間からの換算で、実況観測ではありません。全地球組成は地殻組成や可採埋蔵量ではありません。
-
-## 01 地球と惑星の距離
+## 地球からほかの星まで、 どのくらい？
 
 URL https://djnaoyaman.github.io/earthnumber/#distance
 
-01 / SPACE 地球と惑星の距離 ↗ お隣まで、 どのくらい？ 宇宙の「近い」は、 日常の「遠い」を軽々と超える。 EARTH → MARS 0.52 億 km 光で約2分55秒 軌道モデルを動かす → 角度の変化を模式的に再生 / 公転周期は再現していません ORBITAL PLAYGROUND 軌道の間隔・天体サイズは模式表示 惑星の位置を動かす 同じ方向 同じ方向 太陽を挟んで反対 円軌道・同一平面の簡略モデル。地球を1 AUに固定し、各惑星の平均軌道半径と角度から計算します。現在の実測距離や、実際の最接近距離ではありません。1 AU = 149,597,870.7 km。 DATA / NASA · 太陽系の軌道データ ↗
+地球とほかの惑星の間のきょりは、いつも同じではありません。星の位置を変えて、くらべてみましょう。
 
-出典
-- DATA / NASA · 太陽系の軌道データ ↗ https://science.nasa.gov/learn/basics-of-space-flight/chapter1-2/
+やってみよう 星を選んで、つまみを左右に動かそう。点と点を結ぶ線が、地球からのきょりです。
 
+円軌道・同一平面の簡略モデル。地球を1 AUに固定し、各惑星の平均軌道半径と角度から計算します。現在の実測距離や、実際の最接近距離ではありません。1 AU = 149,597,870.7 km。
 
-## 02 静止していても、旅の途中。
+今の星の位置を表した図ではありません。星の道すじを、わかりやすく丸い形にしています。
+
+出典 https://science.nasa.gov/learn/basics-of-space-flight/chapter1-2/
+
+## じっとしていても、 地球は動いている。
 
 URL https://djnaoyaman.github.io/earthnumber/#motion
 
-02 / MOTION 静止していても、旅の途中。 ↗ このページを 開いてからも。 あなたのいる地球は、 太陽のまわりを走り続けている。 自転 公転 銀河の公転 0.0 km 29.78 km / s 太陽を基準にした地球の平均公転速度 カウントをリセット ↺ 経過時間 × 代表速度で求めた移動距離のイメージです。自転は赤道上、銀河の公転は太陽系の概数。基準と向きが違うため、3つの速度を単純に足すことはできません。現在位置や進行方向を測定する機能ではありません。 DATA / NASA · Solar System Facts ↗
+地球は自分で回りながら、太陽のまわりも進んでいます。どの動きをくらべるか、選んでみましょう。
 
-出典
-- DATA / NASA · Solar System Facts ↗ https://science.nasa.gov/solar-system/solar-system-facts/
+やってみよう くらべたい動きを選ぼう。点が線のはしまで進むと1,000 kmです。
 
+経過時間 × 代表速度で求めた移動距離のイメージです。自転は赤道上、銀河の公転は太陽系の概数。基準と向きが違うため、3つの速度を単純に足すことはできません。現在位置や進行方向を測定する機能ではありません。
 
-## 03 薄い、薄い、生命の居場所。
+3つは、何を中心に考えるかがちがいます。速さをそのまま足すことはできません。
+
+出典 https://science.nasa.gov/solar-system/solar-system-facts/
+
+## 地球が1 mの球なら、 空気の層はどのくらい？
 
 URL https://djnaoyaman.github.io/earthnumber/#atmosphere
 
-03 / ATMOSPHERE 薄い、薄い、生命の居場所。 ↗ 地球を1 mにすると、 空はわずか。 成層圏の上端、高度約50 kmまで。 身近な大きさに置き換えてみる。 地球模型の直径 100 cm 大気は50 kmで終わりません。ここでは対流圏と成層圏を合わせた高度を比較しています。 3.92 mm 50 km / 12,742 km = 約0.39% 地球と50 kmの層は同一縮尺。細い外縁が比較する層。 DATA / NOAA · Layers of Atmosphere ↗
+地面から50 km上までの空気の層を、地球の大きさとくらべます。地球を小さくすると、この層もとても薄くなります。
 
-出典
-- DATA / NOAA · Layers of Atmosphere ↗ https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere
+大気は50 kmで終わりません。ここでは対流圏と成層圏を合わせた高度を比較しています。
 
+やってみよう 地球の模型の大きさを変えよう。大きな数字は、その模型につける空気の層の厚さです。
 
-## 04 足元から、中心へ。
+空気は50 kmより上にもあります。図の細い青いふちは、地面から50 kmまでの部分です。
+
+出典 https://www.noaa.gov/jetstream/atmosphere/layers-of-atmosphere
+
+## 地面の下は、 どうなっている？
 
 URL https://djnaoyaman.github.io/earthnumber/#inside
 
-04 / BELOW OUR FEET 足元から、中心へ。 ↗ 地球のほとんどを、 私たちは見ていない。 6,371 km 地表から中心までの、平均の距離。 SECTION / TRUE RADIAL SCALE 層を分けて見る ＋ SURFACE RELIEF 山も、海溝も、 1 mの地球では。 0.69 mm エベレスト 約8,849 m 0.86 mm チャレンジャー海淵 約10,935 m 1 mの地球模型上での、平均海面からの高さ・深さ。地球は完全な球ではなく、赤道方向に膨らんでいます。 NOAA · Challenger Deep depth (2021) ↗ NOAA · Everest / Ocean Depth ↗ DATA / USGS · Inside the Earth ↗
+地球の中はいくつかの層に分かれています。外側の岩の層から、中心の鉄の多い部分まで見てみましょう。
 
-出典
-- NOAA · Challenger Deep depth (2021) ↗ https://repository.library.noaa.gov/view/noaa/33477
-- NOAA · Everest / Ocean Depth ↗ https://oceanexplorer.noaa.gov/exploration-extras/22-national-ocean-month/
-- DATA / USGS · Inside the Earth ↗ https://pubs.usgs.gov/gip/dynamic/inside.html
+やってみよう 層の名前を選ぼう。白い点が、その層の場所を指します。
 
+1 mの地球模型上での、平均海面からの高さ・深さ。地球は完全な球ではなく、赤道方向に膨らんでいます。
 
-## 05 地球は、何でできている？
+層を分けて見せるときだけ、位置をずらしています。元の図に戻すと、大きさの割合がそろいます。
+
+出典 https://repository.library.noaa.gov/view/noaa/33477
+
+出典 https://oceanexplorer.noaa.gov/exploration-extras/22-national-ocean-month/
+
+出典 https://pubs.usgs.gov/gip/dynamic/inside.html
+
+## 地球の材料を、 100に分けると？
 
 URL https://djnaoyaman.github.io/earthnumber/#elements
 
-05 / ELEMENTS 地球は、何でできている？ ↗ 鉄と酸素で、 およそ6割。 BULK EARTH / MASS ESTIMATE 32 % Fe — 鉄 地球全体の質量に占める推定割合。 地殻だけでなく核まで含む、地球全体の組成モデルの概数です。Fe 32%、O 30%、Si 15%、Mg 14%、その他9%に丸めて表示。直接すべてを測った値ではなく、推定モデルによって差があります。 REFERENCE / Morgan & Anders (1980) · Chemical composition of Earth ↗
+地球をつくる材料を、重さでくらべます。鉄と酸素を合わせると、全体の半分より多くなります。
 
-出典
-- REFERENCE / Morgan & Anders (1980) · Chemical composition of Earth ↗ https://doi.org/10.1073/pnas.77.12.6973
+やってみよう 色のついた部分を押そう。横の長さが、重さの割合を表します。
 
+地殻だけでなく核まで含む、地球全体の組成モデルの概数です。Fe 32%、O 30%、Si 15%、Mg 14%、その他9%に丸めて表示。直接すべてを測った値ではなく、推定モデルによって差があります。
 
-## 06 45.4億年を、たった1日に。
+酸素の多くは空気ではなく、岩などの材料になっています。地球の中まで考えた見積もりです。
+
+出典 https://doi.org/10.1073/pnas.77.12.6973
+
+## 地球の歴史を、 1日にしてみよう。
 
 URL https://djnaoyaman.github.io/earthnumber/#time
 
-06 / DEEP TIME 45.4億年を、たった1日に。 ↗ 私たちの出番は、 最後の約6秒。 地球の誕生を0時、現在を24時に。 ホモ・サピエンスの約30万年は、 この時計ではわずか5.7秒。 4.54 BILLION YEARS / 24 HOURS 23 : 59 : 54.3 ホモ・サピエンスの登場 約30万年前 地球の年齢を45.4億年として計算。生命の誕生時期には議論があるため、約35億年前の生命の証拠を目安にしています。「人類」全体ではなく、ここではホモ・サピエンスを比較。現在は24時です。 DATA / USGS · Age of the Earth ↗ Smithsonian · Homo sapiens ↗
+地球が生まれてから今までを、24時間に縮めます。今の私たちと同じ種類の人が現れるのは、夜が終わる直前です。
 
-出典
-- DATA / USGS · Age of the Earth ↗ https://pubs.usgs.gov/gip/geotime/age.html
-- Smithsonian · Homo sapiens ↗ https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens
+やってみよう できごとを選ぼう。時計の針と、下の線の点が動きます。
 
+地球の年齢を45.4億年として計算。生命の誕生時期には議論があるため、約35億年前の生命の証拠を目安にしています。「人類」全体ではなく、ここではホモ・サピエンスを比較。現在は24時です。
 
-## 07 青い星の、水の量。
+今を24時としています。生き物が現れた時期は、新しい発見で見積もりが変わることがあります。
+
+出典 https://pubs.usgs.gov/gip/geotime/age.html
+
+出典 https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens
+
+## 地球の水を全部、 丸い球に集めたら？
 
 URL https://djnaoyaman.github.io/earthnumber/#water
 
-07 / WATER 青い星の、水の量。 ↗ 海を全部、 ひとつの滴に。 海、氷、地下水、川、大気中の水まで。 地球上のすべての水を球にすると。 すべての水 すべての淡水 湖と川の淡水 DIAMETER OF THE WATER SPHERE 1,385 km EARTH 12,742 km 全水量 地球と水球は同一縮尺 淡水の多くは氷や地下水です。「淡水」すべてがすぐ飲めるわけではありません。湖と川の淡水も、そのまま飲用できる量を示していません。水球の直径はUSGSの概数。 DATA / USGS · How Much Water Is There on Earth? ↗
+海、川、氷、地面の下の水まで集めたら、どれくらいの球になるでしょう。地球とならべてくらべます。
 
-出典
-- DATA / USGS · How Much Water Is There on Earth? ↗ https://www.usgs.gov/water-science-school/science/how-much-water-there-earth
+やってみよう 水の種類を選ぼう。水が少なくなると、青い球も小さくなります。
 
+淡水の多くは氷や地下水です。「淡水」すべてがすぐ飲めるわけではありません。湖と川の淡水も、そのまま飲用できる量を示していません。水球の直径はUSGSの概数。
 
-## 08 地球の呼吸を、数字で。
+淡水は、塩分が少ない水のことです。氷や地下水もふくみ、全部がすぐ飲める水ではありません。
+
+出典 https://www.usgs.gov/water-science-school/science/how-much-water-there-earth
+
+## 森の広さと、 空気の中のガス。
 
 URL https://djnaoyaman.github.io/earthnumber/#cycles
 
-08 / LIVING PLANET 地球の呼吸を、数字で。 ↗ 一秒にも、 変化がある。 森林の増減と、陸と海の炭素吸収。 大きな統計を、身近な時間へ。 NET FOREST AREA LOSS / 2015–2025 4.12 百万 ha / 年 世界の森林面積の純減少 時間に置き換える 60秒 約 1.7 個分 東京ドームの敷地面積で 純減少は森林減少から拡大分を引いた値。2015–2025年の年平均を一定の速さに換算したもので、実況ではありません。東京ドーム敷地面積46,755 m²で計算。 CO₂ UPTAKE / 2024 ESTIMATE 海洋 12.5 Gt CO₂ / 年 陸域 7.0 Gt CO₂ / 年 1 Gtは10億トン。 炭素の重さを、CO₂の重さに換算。 数値の読み方と不確かさ ＋ Global Carbon Budget 2025の2024年推計。海洋3.4 ± 0.4 GtC、陸域1.9 ± 1.1 GtCに44/12を乗じ、約12.5 ± 1.5、7.0 ± 4.0 Gt CO₂へ換算。陸域吸収は森林以外も含みます。土地利用変化による排出は別項目で、収支には不均衡と大きな不確かさがあります。 DATA / FAO · FRA 2025 ↗ GCP / 国立環境研究所 · GCB 2025 ↗
+森の面積の変化と、陸や海が取りこむ二酸化炭素を見てみます。二酸化炭素は、空気にふくまれるガスの一つです。
 
-出典
-- DATA / FAO · FRA 2025 ↗ https://www.fao.org/newsroom/detail/global-deforestation-slows--but-forests-remain-under-pressure--fao-report-shows/en
-- GCP / 国立環境研究所 · GCB 2025 ↗ https://www.cger.nies.go.jp/gcp/news/20251113.html
+やってみよう 時間のつまみを動かそう。色が変わる1マスは、東京ドームの土地1つ分です。
 
+純減少は森林減少から拡大分を引いた値。2015–2025年の年平均を一定の速さに換算したもので、実況ではありません。東京ドーム敷地面積46,755 m²で計算。
 
-## 09 光で旅すると。
+ここで動く数字は、何年かの平均からの計算です。今の森をその場で調べているわけではありません。
+
+出典 https://www.fao.org/newsroom/detail/global-deforestation-slows--but-forests-remain-under-pressure--fao-report-shows/en
+
+出典 https://www.cger.nies.go.jp/gcp/news/20251113.html
+
+## 光は1秒で、 地球を約7.5周。
 
 URL https://djnaoyaman.github.io/earthnumber/#light
 
-09 / SPEED OF LIGHT 光で旅すると。 ↗ 一秒で、 地球を7.5周。 速さの基準を、光に変えてみる。 近くの月にも、わずかな「過去」がある。 地球を1周 月まで 太陽まで LIGHT TRAVEL TIME / ONE WAY 0.134 秒 赤道一周 約40,075 kmを進む時間。 EARTH EARTH 光の旅をたどる 0% 等速で再生 → 0.000 秒 / 0.134 秒 真空中の光速299,792.458 km/sで計算。地球一周は赤道の長さを比較した仮想の経路です。月は平均距離、太陽は1 AU。再生は実際の光の所要時間と同じ速さ。タイムラインの位置は旅全体に対する割合です。 DATA / NASA · Solar System / Earth Fact Sheet ↗
+光は、ものすごい速さで進みます。それでも、月や太陽から地球まで届くには時間がかかります。
 
-出典
-- DATA / NASA · Solar System / Earth Fact Sheet ↗ https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+やってみよう 行き先を選んで再生しよう。光の点が届くまでの時間を、時計でたしかめられます。
 
+真空中の光速299,792.458 km/sで計算。地球一周は赤道の長さを比較したあると考えた経路です。月は平均距離、太陽は1 AU。再生は実際の光の所要時間と同じ速さ。タイムラインの位置は旅全体に対する割合です。
 
-## 10 砂粒と、星の数。
+地球1周は、丸い地球のまわりに沿う道を考えたくらべ方です。実際の光が地球を一周しているわけではありません。
+
+出典 https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+
+## 宇宙の星は、 いくつある？
 
 URL https://djnaoyaman.github.io/earthnumber/#stars
 
-10 / COSMIC COUNT 砂粒と、星の数。 ↗ 数えることさえ、 想像を超える。 観測可能な宇宙の星の数は、 10²²〜10²⁴個とも推定される。 10 23 星の数の推定レンジ 10²³ 個 星の数は銀河数や銀河あたりの星の数に基づく桁の推定です。「地球のすべての砂粒より多い」という比較は、砂浜・砂漠・深さ・粒径の定義で変わるため断定していません。点は数の雰囲気を表す模式表現で、1点が星1個ではありません。 DATA / ESA · How many stars are there in the Universe? ↗
+私たちが見ることのできる宇宙には、数えきれないほどの星があります。研究者は、観測した結果から数を見積もっています。
 
-出典
-- DATA / ESA · How many stars are there in the Universe? ↗ https://www.esa.int/Science_Exploration/Space_Science/How_many_stars_are_there_in_the_Universe
+やってみよう つまみを1つ右へ動かすと、見積もった星の数は10倍になります。マスの数でくらべよう。
 
+星の数は銀河数や銀河あたりの星の数に基づく桁の推定です。「地球のすべての砂粒より多い」という比較は、砂浜・砂漠・深さ・粒径の定義で変わるため断定していません。点は数の雰囲気を表す模式表現で、1点が星1個ではありません。
 
-## 11 太陽の1時間。人類の1年。
+すべての星を1つずつ数えた結果ではありません。砂つぶとのくらべ方も、条件によって変わります。
+
+出典 https://www.esa.int/Science_Exploration/Space_Science/How_many_stars_are_there_in_the_Universe
+
+## 太陽から1時間で、 どれだけ届く？
 
 URL https://djnaoyaman.github.io/earthnumber/#solar
 
-11 / SOLAR ENERGY 太陽の1時間。人類の1年。 ↗ 空から届く、 桁違いのエネルギー。 地球が大気の外側で受ける太陽光を、 人類の年間一次エネルギー消費と比べる。 TIME TO MATCH 620 EJ / 2023 BASELINE 59.5 分 17% 太陽光が届く時間 10分 0 人類の1年分 ≈ 620 EJ 2年分 太陽放射1,361 W/m² × 地球の断面積πR²（R=6,371 km）≒ 1.735×10¹⁷ W。620 EJを割ると約59.5分。比較する消費量はEnergy Institute 2024版の2023年統計です。大気上端に入射する総量であり、地表で発電・回収できる量ではありません。 Energy Institute · Statistical Review 2024 archive ↗ DATA / NASA · Solar Irradiance ↗
+地球には太陽から光のエネルギーが届きます。その量を、人間が1年に使ったエネルギーとくらべます。
 
-出典
-- Energy Institute · Statistical Review 2024 archive ↗ https://www.energyinst.org/statistical-review/resources-and-data-downloads
-- DATA / NASA · Solar Irradiance ↗ https://earth.gsfc.nasa.gov/climate/projects/solar-irradiance/science
+やってみよう 時間を増やそう。棒が真ん中の線に届くと、人間の約1年分です。
 
+太陽放射1,361 W/m² × 地球の断面積πR²（R=6,371 km）≒ 1.735×10¹⁷ W。620 EJを割ると約59.5分。比較する消費量はEnergy Institute 2024版の2023年統計です。大気上端に入射する総量であり、地表で発電・回収できる量ではありません。
 
-## 12 地球は、絶えず光っている。
+くらべているのは空気の層の外側に届く光です。その全部を電気に変えて使える、という意味ではありません。
+
+出典 https://www.energyinst.org/statistical-review/resources-and-data-downloads
+
+出典 https://earth.gsfc.nasa.gov/climate/projects/solar-irradiance/science
+
+## 世界では1秒に、 約44回の雷。
 
 URL https://djnaoyaman.github.io/earthnumber/#lightning
 
-12 / ELECTRIC PLANET 地球は、絶えず光っている。 ↗ 一秒に、 約44回の閃光。 雲の中の雷も、雲と地面を結ぶ雷も。 世界の平均から、時間の密度を感じる。 MODEL COUNTER / NOT LIVE OBSERVATIONS 0 flashes この展示が画面に入ってからの、平均値による換算。 カウントをリセット ↺ 衛星観測研究による世界平均44 ± 5 flashes/s（Christian et al., 2003）。約380万回/日に相当します。「発光」は落雷だけではありません。光点は発生地点を示さない模式表現。強い点滅を避け、ゆっくりした濃淡で表示しています。 DATA / NASA NTRS · Global Frequency and Distribution of Lightning ↗
+雲の中で光る雷も、地面につながる雷もあります。世界で起きる回数の平均を、時間に合わせて数えます。
 
-出典
-- DATA / NASA NTRS · Global Frequency and Distribution of Lightning ↗ https://ntrs.nasa.gov/citations/20020051098
+やってみよう 再生中の1秒を、44この点で表しています。数字は、数え始めてからの合計です。
 
+衛星観測研究による世界平均44 ± 5 flashes/s（Christian et al., 2003）。約380万回/日に相当します。「発光」は落雷だけではありません。光点は発生地点を示さない模式表現。強い点滅を避け、ゆっくりした濃淡で表示しています。
 
-## 13 マグニチュードの、一段。
+今の雷を観測しているわけではありません。点の場所も、実際に雷が光った場所ではありません。
+
+出典 https://ntrs.nasa.gov/citations/20020051098
+
+## 地震の数字が2ちがうと、 エネルギーは約1,000倍。
 
 URL https://djnaoyaman.github.io/earthnumber/#quake
 
-13 / ENERGY SCALE マグニチュードの、一段。 ↗ たった「2」の差が、 1,000倍になる。 M6を基準に、放出エネルギーを比較。 数直線を一歩進むと、世界が変わる。 比較するマグニチュード M8.0 ENERGY / RELATIVE TO M6 1,000 倍 M6 M8 エネルギー比 = 10^(1.5 × マグニチュード差)。円の面積がエネルギー比に比例する表現です。揺れの強さ（震度）、被害、震源域の面積を示すものではありません。 DATA / USGS · Earthquake Magnitude / Energy ↗
+地震そのものの大きさを表す数字を、マグニチュードといいます。数字が少し変わるだけで、出るエネルギーは大きく変わります。
 
-出典
-- DATA / USGS · Earthquake Magnitude / Energy ↗ https://earthquake.usgs.gov/education/how_much_bigger.php
+やってみよう M6を1とすると、どうなるでしょう。つまみを動かし、円の面積をくらべよう。
 
+エネルギー比 = 10^(1.5 × マグニチュード差)。円の面積がエネルギー比に比例する表現です。揺れの強さ（震度）、被害、震源域の面積を示すものではありません。
 
-## 14 見えない空気の重さ。
+円の面積はエネルギーのくらべ方です。ゆれる強さや、被害の大きさをそのまま表す図ではありません。
+
+出典 https://earthquake.usgs.gov/education/how_much_bigger.php
+
+## 見えない空気にも、 重さがある。
 
 URL https://djnaoyaman.github.io/earthnumber/#airmass
 
-14 / INVISIBLE MASS 見えない空気の重さ。 ↗ 軽やかな空にも、 途方もない質量。 地球を包む大気の総質量。 kgとトンで、数字の桁を見比べる。 トン キログラム TOTAL ATMOSPHERIC MASS 5.1 × 10 15 t（トン） ≈ 5,100兆トン NASA Earth Fact Sheetの大気質量5.1×10¹⁸ kgを使用。1 t = 1,000 kgで換算。文献によって約5.15×10¹⁸ kgとも示され、これは5,150兆トンに相当します。 DATA / NASA · Earth Fact Sheet ↗
+空気は目に見えませんが、重さがあります。地球を包む空気を全部合わせると、とても大きな数字になります。
 
-出典
-- DATA / NASA · Earth Fact Sheet ↗ https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+やってみよう 単位を切り替えよう。同じ空気の量でも、kgとトンでは数字が変わります。
 
+NASA Earth Fact Sheetの大気質量5.1×10¹⁸ kgを使用。1 t = 1,000 kgで換算。文献によって約5.15×10¹⁸ kgとも示され、これは5,150兆トンに相当します。
 
-## 15 細胞の中にある、長い旅。
+この展示の「重さ」は、材料の量を表す質量という意味で使っています。
+
+出典 https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
+
+## 体の中のDNAを、 長いひもにしたら？
 
 URL https://djnaoyaman.github.io/earthnumber/#dna
 
-15 / INNER UNIVERSE 細胞の中にある、長い旅。 ↗ わずか2 mが、 宇宙の距離になる。 核にあるDNAをほどいて、つないだら。 細胞数を仮定して、長さを計算する。 DNAを2 m含む細胞の数（仮定） 5兆個 EARTH ↔ SUN / ROUND TRIPS 33.4 往復 総延長 約100億 km 核DNA約2 m/二倍体細胞という代表値を使用。総長 = 仮定した細胞数 × 2 m、地球–太陽1往復 = 2 AU。成熟した赤血球には核がなく、全身の全細胞に2 mを掛けることはできません。細胞数・DNA量は体格や細胞種で変わるため、全身の実測値ではなく仮定の計算です。 DATA / NHGRI · Nucleosome ↗
+DNAは、生き物の体をつくる情報をもつ物質です。1つの細胞に入るDNAをのばして、たくさんつないだ長さを考えます。
 
-出典
-- DATA / NHGRI · Nucleosome ↗ https://www.genome.gov/genetics-glossary/Nucleosome
+やってみよう DNAをもつ細胞の数を変えよう。図の線は、地球から太陽まで何往復できるかを表します。
 
+核DNA約2 m/二倍体細胞という代表値を使用。総長 = 仮定した細胞数 × 2 m、地球–太陽1往復 = 2 AU。成熟した赤血球には核がなく、全身の全細胞に2 mを掛けることはできません。細胞数・DNA量は体格や細胞種で変わるため、全身の実測値ではなく仮定の計算です。
 
-## 16 哺乳類の重さを、100に分ける。
+すべての細胞に同じ長さのDNAがあるわけではありません。選んだ条件で計算する展示です。
+
+出典 https://www.genome.gov/genetics-glossary/Nucleosome
+
+## 人と家畜と野生の動物、 重さでくらべると？
 
 URL https://djnaoyaman.github.io/earthnumber/#mammals
 
-16 / MAMMAL BIOMASS 哺乳類の重さを、100に分ける。 ↗ 野生は、 わずか数％。 HUMANS + LIVESTOCK / CARBON MASS 95.8 % 人間と家畜が占める、推定の割合。 家畜 59.9% 人間 35.9% 野生 家畜0.1、人間0.06、野生0.007 GtCから割合を計算。 Bar-On et al.（2018）の炭素質量による推定です。個体数や種数の割合ではありません。野生は陸上・海洋の哺乳類を含みます。生体重で比較した別の研究とは基準が異なるため、この展示では2018年の推定値に統一しています。 DATA / PNAS · The biomass distribution on Earth (2018) ↗
+人、牛やぶたなどの家畜、野生のほ乳類をくらべます。ほ乳類は、母乳で子を育てる仲間です。
 
-出典
-- DATA / PNAS · The biomass distribution on Earth (2018) ↗ https://doi.org/10.1073/pnas.1711842115
+やってみよう 色の帯を押そう。横の長さが、同じ方法で見積もった重さの割合です。
 
+Bar-On et al.（2018）の炭素質量による推定です。個体数や種数の割合ではありません。野生は陸上・海洋の哺乳類を含みます。生体重で比較した別の研究とは基準が異なるため、この展示では2018年の推定値に統一しています。
 
-## 17 まだ、名前のない生命。
+数や種類の多さではありません。体の水分をふくむ重さではなく、体にある炭素という材料の重さでくらべています。
+
+出典 https://doi.org/10.1073/pnas.1711842115
+
+## まだ名前のついていない、 生き物がたくさん。
 
 URL https://djnaoyaman.github.io/earthnumber/#species
 
-17 / UNKNOWN LIFE まだ、名前のない生命。 ↗ 見つけた世界は、 世界の一部。 真核生物の種数は約870万種。 2011年の研究は、約86％が 未記載と推定しました。 UNDESCRIBED / 2011 ESTIMATE 86 % 記載済みの割合と切り替える ⇄ Mora et al.（2011）による真核生物の推定870万 ± 130万種（標準誤差）。同論文の当時のデータベース記載約120万種に対する未記載割合です。現在の記載数を表す数字ではなく、細菌・古細菌を含む全生物の種数でもありません。1マスは推定総数の1％。 DATA / PLOS Biology · How Many Species Are There on Earth and in the Ocean? ↗
+研究者は、まだ見つかっていない種類もふくめて、生き物の数を見積もっています。100マスに分けて、その割合を見てみましょう。
 
-出典
-- DATA / PLOS Biology · How Many Species Are There on Earth and in the Ocean? ↗ https://doi.org/10.1371/journal.pbio.1001127
+やってみよう ボタンを押して、名前がついた種類と、まだ名前のない種類を切り替えよう。
 
+Mora et al.（2011）による真核生物の推定870万 ± 130万種（標準誤差）。同論文の当時のデータベース記載約120万種に対する未記載割合です。現在の記載数を表す数字ではなく、細菌・古細菌を含む全生物の種数でもありません。1マスは推定総数の1％。
 
-## 18 人工物と、生きものの重さ。
+2011年の研究にもとづくくらべ方です。細菌などをのぞいた「真核生物」という仲間が対象です。
+
+出典 https://doi.org/10.1371/journal.pbio.1001127
+
+## 人がつくった物と、 生き物の重さ。
 
 URL https://djnaoyaman.github.io/earthnumber/#humanmass
 
-18 / HUMAN-MADE PLANET 人工物と、生きものの重さ。 ↗ つくったものが、 いのちの重さを超えた。 ESTIMATED CROSSOVER YEAR 2020 ± 6年 乾燥質量で比べた、推定の転換点。 GLOBAL LIVING BIOMASS 約1.1兆 t 植物・動物・微生物など ≈ ANTHROPOGENIC MASS 約1.1兆 t コンクリート・骨材・金属など 何を比べた研究？ ＋ Elhacham et al.（2020）の推定。水分を除いた生物量と、使用中の固体人工物の蓄積量を比較しています。人工物にはコンクリート、骨材、レンガ、アスファルト、金属、プラスチックなどを含み、廃棄物を含む場合は転換年が変わります。現在年の実況や、年間生産量との比較ではありません。 DATA / Nature · Global human-made mass exceeds all living biomass (2020) ↗
+建物や道路など、人がつくった物を全部合わせた重さは、どれくらいでしょう。地球上の生き物の重さとくらべた研究があります。
 
-出典
-- DATA / Nature · Global human-made mass exceeds all living biomass (2020) ↗ https://www.nature.com/articles/s41586-020-3010-5
+やってみよう 同じ重さを同じ大きさの図にしています。2020年ごろ、2つがならんだという見積もりです。
 
+生き物は水分をのぞいてくらべています。今この瞬間の量を測った数字ではありません。
 
-## 19 プラスチックを、一本の紐に。
+出典 https://www.nature.com/articles/s41586-020-3010-5
+
+## 1年分のプラスチックを、 長いひもにしたら？
 
 URL https://djnaoyaman.github.io/earthnumber/#plastic
 
-19 / MATERIAL FOOTPRINT プラスチックを、一本の紐に。 ↗ 太さを変えると、 地球の何周分？ 2019年の世界のプラスチック使用量。 4億6,000万トンを、仮想の紐へ。 紐の直径 10 cm EQUATOR / EQUIVALENT LAPS 1,539 周 OECDの2019年使用量460 Mt（繊維・添加剤を含む）。廃プラスチック353 Mtとは別の値です。密度を950 kg/m³と仮定し、空隙のない円柱に換算。長さ = 質量 ÷ 密度 ÷ π(d/2)²、地球赤道一周40,075 kmで割って計算します。素材の密度と紐の太さで結果は変わり、実在する紐の測定ではありません。 DATA / OECD · Global Plastics Outlook (2022 / 2019 data) ↗
+世界で1年に使ったプラスチックを、すき間のないひもに作り直すと考えます。太さを変えると、長さはどう変わるでしょう。
 
-出典
-- DATA / OECD · Global Plastics Outlook (2022 / 2019 data) ↗ https://www.oecd.org/en/publications/global-plastics-outlook_de747aef-en/full-report/component-7.html
+やってみよう ひもの太さを変えよう。細くすると、同じ量でも長いひもになります。
 
+OECDの2019年使用量460 Mt（繊維・添加剤を含む）。廃プラスチック353 Mtとは別の値です。密度を950 kg/m³と仮定し、空隙のない円柱に換算。長さ = 質量 ÷ 密度 ÷ π(d/2)²、地球赤道一周40,075 kmで割って計算します。素材の密度と紐の太さで結果は変わり、実在する紐の測定ではありません。
 
-## 20 空に浮かぶ、500トン。
+2019年に使われた量で計算しています。実際にひもを作ったわけではなく、材料の密度も1つに決めた計算です。
+
+出典 https://www.oecd.org/en/publications/global-plastics-outlook_de747aef-en/full-report/component-7.html
+
+## ふわふわの雲にも、 たくさんの水。
 
 URL https://djnaoyaman.github.io/earthnumber/#cloud
 
-20 / WEATHER 空に浮かぶ、500トン。 ↗ ふわり、と見えて、 ゾウ100頭分。 1 km³の積雲に含まれる水滴を、 密度0.5 g/m³で計算すると。 立方体に見立てた雲の一辺 1.0 km WATER DROPLETS / ASSUMED DENSITY 500 t 5 tのゾウなら、100頭分。 WATER + AIR ↑　 ↑　 ↑　 ↑ USGSの積雲の例に基づく水滴質量の模型です。積乱雲すべての重さではなく、雲に含まれる空気や水蒸気の質量は除いています。微小な水滴の落下の遅さや上昇気流などが関わり、500トンの塊が浮いているわけではありません。ゾウ1頭5 tは比較の仮定です。 DATA / USGS · How Much Does a Cloud Weigh? ↗
+雲は、とても小さな水のつぶなどが集まったものです。大きさを決めて、雲の中の水だけの重さを計算します。
 
-出典
-- DATA / USGS · How Much Does a Cloud Weigh? ↗ https://www.usgs.gov/water-science-school/science/how-much-does-a-cloud-weigh
+やってみよう 雲の大きさを変えよう。図の雲と、水の重さの数字が変わります。
 
+USGSの積雲の例に基づく水滴質量の模型です。積乱雲すべての重さではなく、雲に含まれる空気や水蒸気の質量は除いています。微小な水滴の落下の遅さや上昇気流などが関わり、500トンの塊が浮いているわけではありません。ゾウ1頭5 tは比較の仮定です。
 
-## 21 毎日、宇宙が少し届く。
+雲の種類や中の水の量で、重さは変わります。小さな水のつぶは、上向きの空気の流れなどに支えられています。
+
+出典 https://www.usgs.gov/water-science-school/science/how-much-does-a-cloud-weigh
+
+## 宇宙から、小さなちりが 地球に届いている。
 
 URL https://djnaoyaman.github.io/earthnumber/#dust
 
-21 / COSMIC DUST 毎日、宇宙が少し届く。 ↗ 空から来るのは、 光だけではない。 宇宙塵などが地球へ届く量は、 1日におよそ100トンという概数。 ELAPSED-TIME MODEL / 100 t PER DAY 0.00 kg ページを開いてからの経過時間で換算。 JAXAの解説にある1日100トン以上という桁の概数を、ここでは100 t/日として一定速度に換算。大気圏への流入と、燃え残って地表に堆積する量は異なります。粒子は模式表現で、観測地点や実際の粒数を示しません。 DATA / JAXA · Interplanetary dust / Hayabusa2 ↗
+流れ星の材料になる小さなかけらなどが、毎日、地球へやってきます。その量を、経った時間でくらべます。
 
-出典
-- DATA / JAXA · Interplanetary dust / Hayabusa2 ↗ https://www.hayabusa2.jaxa.jp/en/topics/20210823_Mstry/
+やってみよう 数字は、1日に約100トン届くとして計算しています。動くつぶは、宇宙から来るようすを表す絵です。 「止める」を押している間は、数えません。
 
+JAXAの解説にある1日100トン以上という桁の概数を、ここでは100 t/日として一定速度に換算。大気圏への流入と、燃え残って地表に堆積する量は異なります。粒子は模式表現で、観測地点や実際の粒数を示しません。
 
-## 22 長くなる、一日。
+地球の空気の層に入る量と、燃え残って地面に落ちる量はちがいます。つぶ1つを何kgと決めた図ではありません。
+
+出典 https://www.hayabusa2.jaxa.jp/en/topics/20210823_Mstry/
+
+## 地球の1日は、 少しずつ変わっている。
 
 URL https://djnaoyaman.github.io/earthnumber/#rotation
 
-22 / SLOWING DOWN 長くなる、一日。 ↗ 100年かけて、 まばたきの隙間へ。 歴史的な日食などの記録が示す、 一日の長さの長期的な変化。 比較する年数 100年 DAY LENGTH INCREASE / LONG-TERM MEAN ＋ 1.8 ms EARTH ↔ MOON / 模式図 紀元前720年〜2015年の回転史研究に基づく平均約1.8 ms/世紀を、選択年数に比例させた比較。潮汐摩擦だけでなく、氷床・海洋・地球内部の変動も影響します。日々の自転は増減し、この割合を恐竜時代へ単純に延長することはできません。 DATA / Stephenson et al. (2016) · Earth rotation ↗
+地球の回り方は、長い時間で見ると変わっています。昔の日食の記録などから、1日の長さの変化を調べられます。
 
-出典
-- DATA / Stephenson et al. (2016) · Earth rotation ↗ https://doi.org/10.1098/rspa.2016.0404
+やってみよう 年数を変えよう。長くなる時間を、1秒の1000分の1である「ミリ秒」で表します。
 
+紀元前720年〜2015年の回転史研究に基づく平均約1.8 ms/世紀を、選択年数に比例させた比較。潮汐摩擦だけでなく、氷床・海洋・地球内部の変動も影響します。日々の自転は増減し、この割合を恐竜時代へ単純に延長することはできません。
 
-## 23 まだ測りきれていない、海底。
+長い期間の平均でくらべています。毎日まったく同じように長くなるわけではありません。
+
+出典 https://doi.org/10.1098/rspa.2016.0404
+
+## 海の底の形は、 どこまでわかった？
 
 URL https://djnaoyaman.github.io/earthnumber/#seafloor
 
-23 / OCEAN FRONTIER まだ測りきれていない、海底。 ↗ 足元の星に、 広大な空白。 SEAFLOOR MAPPED / APRIL 2026 28.7 % 現代の基準で海底地形が測量された割合。 ● 測量済み 28.7% ○ それ以外 71.3% Seabed 2030の2026年4月発表値。海底の地形測量と、潜水・映像による直接観察は別です。衛星推定による全地球的な概形はすでに存在します。マス目は割合の図で実際の場所を示す地図ではなく、レーダーの動きは模式表現です。 DATA / Nippon Foundation–GEBCO Seabed 2030 · 2026 ↗
+船などを使って、海の底の高さや深さをくわしく測っています。調べ終わった面積の割合を見てみましょう。
 
-出典
-- DATA / Nippon Foundation–GEBCO Seabed 2030 · 2026 ↗ https://seabed2030.org/2026/04/20/global-seabed-mapping-reaches-new-milestone-as-five-million-square-kilometres-added-in-a-year/
+やってみよう 1000マスのうち287マスを青くしています。青い部分は28.7%です。
 
+Seabed 2030の2026年4月発表値。海底の地形測量と、潜水・映像による直接観察は別です。衛星推定による全地球的な概形はすでに存在します。マス目は割合の図で実際の場所を示す地図ではなく、レーダーの動きは模式表現です。
 
-## 24 海には金がある。ほんの、わずか。
+2026年4月発表の数字です。このマスは地図ではなく、実際に測った場所を表していません。
+
+出典 https://seabed2030.org/2026/04/20/global-seabed-mapping-reaches-new-milestone-as-five-million-square-kilometres-added-in-a-year/
+
+## 1億トンの海水に、 金が約1 g。
 
 URL https://djnaoyaman.github.io/earthnumber/#gold
 
-24 / GOLD IN THE OCEAN 海には金がある。ほんの、わずか。 ↗ 1億トンの海水に、 たった1グラム。 GOLD CONCENTRATION / STUDY EXAMPLE 1 g 大西洋・北太平洋の研究例を、 海水1億トンあたりに置き換える。 金の存在を表す模式図 / 粒の大きさは誇張 NOAAの解説は、海水に溶ける金の総量を正確に言うのは難しいとしています。ここでは示された濃度の研究例を使用し、全海洋へ一律に外挿していません。海水1億 t = 10¹¹ kgに金1 g = 10⁻³ kgなので、質量比は約10⁻¹⁴。濃度が極めて低いため、海水から利益を得られる金の回収は現在実現していません。 DATA / NOAA · Is there gold in the ocean? (2026 update) ↗
+海の水には、とても少ない量の金がとけています。大西洋などで調べた研究の例を見てみましょう。
 
-出典
-- DATA / NOAA · Is there gold in the ocean? (2026 update) ↗ https://oceanservice.noaa.gov/facts/gold.html
+やってみよう 小さな金の点は「金がある」と伝えるためのしるしです。本当の金のつぶの大きさではありません。
 
+NOAAの解説は、海水に溶ける金の総量を正確に言うのは難しいとしています。ここでは示された濃度の研究例を使用し、全海洋へ一律に外挿していません。海水1億 t = 10¹¹ kgに金1 g = 10⁻³ kgなので、質量比は約10⁻¹⁴。濃度が極めて低いため、海水から利益を得られる金の回収は現在実現していません。
 
-## 25 地球を縫う、海底の山脈。
+海全体の金の量を決めた数字ではありません。とても薄く広がっているので、集めて使うのは簡単ではありません。
+
+出典 https://oceanservice.noaa.gov/facts/gold.html
+
+## 海の底にも、 長い山なみがある。
 
 URL https://djnaoyaman.github.io/earthnumber/#ridge
 
-25 / EARTH’S SEAM 地球を縫う、海底の山脈。 ↗ 山の道は、 海の底まで続く。 中央海嶺系の全長は約65,000 km。 赤道を約1.6周できる長さ。 MID-OCEAN RIDGE SYSTEM 65,000 km NOAAによる中央海嶺系の概数。全長65,000 km ÷ 赤道周長40,075 km ≈ 1.62周。90％以上が海面下にあります。線は長さや地形のイメージで、海嶺の実際の経路や高さを表していません。 DATA / NOAA · Longest mountain range ↗
+海の底には、世界をつなぐように続く山なみがあります。その長さは、地球のまわりを1周するより長いのです。
 
-出典
-- DATA / NOAA · Longest mountain range ↗ https://oceanservice.noaa.gov/facts/midoceanridge.html
+やってみよう 同じ長さのきまりで描いた棒で、海の底の山なみと地球1周をくらべよう。
 
+NOAAによる中央海嶺系の概数。全長65,000 km ÷ 赤道周長40,075 km ≈ 1.62周。90％以上が海面下にあります。棒の長さは同じ縮尺でくらべており、実際の地図や山の高さは表していません。
 
-## 26 爪のように伸びる、大陸の距離。
+「中央海嶺」は海の底の山なみの名前です。長さは約65,000 kmという目安を使っています。
+
+出典 https://oceanservice.noaa.gov/facts/midoceanridge.html
+
+## 地面の下の板は、 ゆっくり動く。
 
 URL https://djnaoyaman.github.io/earthnumber/#plates
 
-26 / TECTONIC MOTION 爪のように伸びる、大陸の距離。 ↗ 遅い。 でも、止まらない。 一年に数cmのプレートの動き。 時間のものさしを変えて見てみる。 仮定する移動速度 5 cm / 年 模型で進める時間 100年 DISTANCE / CONSTANT SPEED MODEL 5.0 m このページを開いてからなら 0 nm。 PLATE A ← → PLATE B 位置変化を誇張した模式図 / 特定の境界の再現ではありません 速度は代表的な数cm/年の範囲で選ぶ仮定。相手のプレートや基準により速度・方向は異なります。換算には1年=365.25日を使用。爪の成長も個人差があります。模型の左右の動きと、数値で示す一方の移動距離は別の表現です。 DATA / USGS · How fast do tectonic plates move? ↗
+地球の表面には、プレートという大きな岩の板があります。1年に数cmほど動く速さを、長い時間で考えます。
 
-出典
-- DATA / USGS · How fast do tectonic plates move? ↗ https://www.usgs.gov/faqs/how-fast-do-tectonic-plates-move
+やってみよう 速さと年数を変えよう。青い板が動くきょりと、数字がいっしょに変わります。
 
+速度は代表的な数cm/年の範囲で選ぶ仮定。相手のプレートや基準により速度・方向は異なります。換算には1年=365.25日を使用。爪の成長も個人差があります。模型の左右の動きと、数値で示す一方の移動距離は別の表現です。
 
-## 27 足元にある、もうひとつの熱。
+場所や、何とくらべるかで速さは変わります。図では片方の板を動かして、きょりをくらべています。
+
+出典 https://www.usgs.gov/faqs/how-fast-do-tectonic-plates-move
+
+## 地球の奥は、 とても熱い。
 
 URL https://djnaoyaman.github.io/earthnumber/#coreheat
 
-27 / INNER HEAT 足元にある、もうひとつの熱。 ↗ 地球の奥深く、 約6,000℃の境界。 内核と外核の境界温度の研究推定。 太陽の表面と同じくらいの温度帯。 INNER CORE BOUNDARY / EXPERIMENTAL ESTIMATE 6,000 ℃ 推定の不確かさ 約±500℃ 内核境界 約6,000℃ 太陽の表面（有効温度） 約5,500℃ Anzellini et al.（2013）の鉄融解実験の高圧への外挿による内核境界約6,230 ± 500 Kを、概数約6,000℃として表示。地球内部の温度にはモデル差があります。太陽表面約5,772 Kは約5,499℃。磁場は熱だけでなく、外核の導電性流体の運動や自転などによって維持されます。 DATA / Science · Melting of iron at Earth’s inner core boundary ↗
+地球の中心に近い、鉄の多い部分の温度を調べた研究があります。太陽の表面と同じくらいの温度です。
 
-出典
-- DATA / Science · Melting of iron at Earth’s inner core boundary ↗ https://pubmed.ncbi.nlm.nih.gov/23620049/
+やってみよう 温度計の長さで、約6,000℃と約5,500℃をくらべよう。
 
+Anzellini et al.（2013）の鉄融解実験の高圧への外挿による内核と外核の間約6,230 ± 500 Kを、概数約6,000℃として表示。地球内部の温度にはモデル差があります。太陽表面約5,772 Kは約5,499℃。磁場は熱だけでなく、外核の導電性流体の運動や自転などによって維持されます。
 
-## 28 森の地下で、つながる一個体。
+地球の中に温度計を入れて測った数字ではありません。強い圧力をかけた鉄の実験などからの見積もりです。
+
+出典 https://pubmed.ncbi.nlm.nih.gov/23620049/
+
+## 地面の下で、 つながるキノコ。
 
 URL https://djnaoyaman.github.io/earthnumber/#fungus
 
-28 / HIDDEN GIANT 森の地下で、つながる一個体。 ↗ キノコの本体は、 森より広い？ 米国オレゴン州の巨大なナラタケ属菌。 一つの遺伝的個体が覆う推定範囲。 ARMILLARIA / ESTIMATED AREA 9.65 km² 東京ドームの敷地なら約206個分。 USDA Forest Serviceの2,385 acresを約9.65 km²へ換算。9.65×10⁶ m² ÷ 46,755 m² ≈ 206個分。地表のキノコの傘ではなく、地下の菌糸などが広がる範囲です。「最大の単一生物」は面積・質量・クローンの定義で異なるため、ここでは巨大な菌類個体の例として紹介しています。 DATA / USDA Forest Service · Humongous Fungus ↗
+キノコには、地面の下に細い糸のような部分を広げる仲間がいます。アメリカで見つかった、とても広い1つの個体の例です。
 
-出典
-- DATA / USDA Forest Service · Humongous Fungus ↗ https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/fsbdev3_033146.pdf
+やってみよう 線が広がる絵は、地面の下でつながるようすです。広さは、となりの数字でくらべよう。
 
+USDA Forest Serviceの2,385 acresを約9.65 km²へ換算。9.65×10⁶ m² ÷ 46,755 m² ≈ 206個分。地表のキノコの傘ではなく、地下の菌糸などが広がる範囲です。「最大の単一生物」は面積・質量・クローンの定義で異なるため、ここでは巨大な菌類個体の例として紹介しています。
 
-## 29 小さな足が、2京匹。
+絵は実際の広がり方を写した地図ではありません。地上に見えるキノコのかさの面積でもありません。
+
+出典 https://www.fs.usda.gov/Internet/FSE_DOCUMENTS/fsbdev3_033146.pdf
+
+## 地球にはアリが、 どのくらいいる？
 
 URL https://djnaoyaman.github.io/earthnumber/#ants
 
-29 / SMALL BUT MANY 小さな足が、2京匹。 ↗ 数の力は、 小ささを超える。 世界のアリの個体数は、約2京匹。 地球の人口を仮定して、一人あたりに。 比較する人口（仮定） 80億人 ANTS / PER PERSON 250 万匹 2京 = 20,000,000,000,000,000 Schultheiss et al.（2022）の推定約20×10¹⁵匹。比較人口は実況値ではなく選択した仮定です。同研究によるバイオマスは約1,200万 t C。炭素質量で比較した野生の鳥類・哺乳類の合計より多いとされますが、全身の生体重とは異なります。アリの絵は模式表現です。 DATA / PNAS · The abundance, biomass, and distribution of ants on Earth ↗
+世界のアリの数を見積もると、約2京匹。人の数を決めて、1人あたり何匹になるか計算してみましょう。
 
-出典
-- DATA / PNAS · The abundance, biomass, and distribution of ants on Earth ↗ https://doi.org/10.1073/pnas.2201550119
+やってみよう 人の数を変えよう。アリの合計は同じでも、1人あたりの数は変わります。
 
+Schultheiss et al.（2022）の推定約20×10¹⁵匹。比較人口は実況値ではなく選択した仮定です。同研究によるバイオマスは約1,200万 t C。炭素質量で比較した野生の鳥類・哺乳類の合計より多いとされますが、全身の生体重とは異なります。アリの絵は模式表現です。
 
-## 30 ひとりの体に、兆の隣人。
+アリを全部数えた数字ではありません。図のアリは絵で、1匹を何万匹分と決めてはいません。
+
+出典 https://doi.org/10.1073/pnas.2201550119
+
+## 体の中には、 小さな細菌がいる。
 
 URL https://djnaoyaman.github.io/earthnumber/#bacteria
 
-30 / OUR INNER ECOSYSTEM ひとりの体に、兆の隣人。 ↗ 私たちは、 ひとりでできていない。 体重70 kgの基準成人男性モデルで、 細菌約38兆個、ヒト細胞約30兆個。 細菌 ヒト細胞 CELL COUNT / 2016 REFERENCE MODEL 38 兆個 Sender et al.（2016）のモデルによる概数。個人差や体格、年齢、測定法で変わり、「すべての人で細菌が多い」という意味ではありません。比は約1.3対1で、同じ桁の数。細菌の推定質量は約0.2 kgです。絵は細胞数の比率や実際の大きさを再現していません。 DATA / PLOS Biology · Revised Estimates for Human and Bacterial Cells ↗
+人の体には、たくさんの細胞があります。体の中などにいる細菌の数とくらべた研究を見てみましょう。
 
-出典
-- DATA / PLOS Biology · Revised Estimates for Human and Bacterial Cells ↗ https://doi.org/10.1371/journal.pbio.1002533
+やってみよう ボタンで切り替えよう。細菌は38こ、人の細胞は30この印でくらべます。1こは1兆個分です。
 
+Sender et al.（2016）のモデルによる概数。個人差や体格、年齢、測定法で変わり、「すべての人で細菌が多い」という意味ではありません。比は約1.3対1で、同じ桁の数。細菌の推定質量は約0.2 kgです。絵は細胞数の比率や実際の大きさを再現していません。
 
-## 31 鉄を中心に、地球の材料を。
+体重70 kgの大人の男性をもとにした見積もりです。体の大きさや人によって数は変わります。
+
+出典 https://doi.org/10.1371/journal.pbio.1002533
+
+## 地球の材料に、 鉄はどのくらい？
 
 URL https://djnaoyaman.github.io/earthnumber/#minerals
 
-31 / EARTH’S MATERIALS 鉄を中心に、地球の材料を。 ↗ この星の重さの、 約3分の1は鉄。 地表だけではなく、核まで含む地球。 元素を選んで、含まれる質量を見てみる。 BULK EARTH / APPROXIMATE COMPOSITION MODEL Fe / 鉄 32.1 % 1.92 × 10 24 kg 核の主要成分。マントルや地殻にも鉱物中の元素として含まれます。 地球全体の質量に対する割合 ここでいう「ミネラル」は地球を構成する元素として整理。栄養学のミネラル、鉱物の種類、採掘可能な資源量とは区別します。元素は金属単体だけでなく、酸化物・ケイ酸塩などにも含まれます。Morgan & Anders（1980）に基づく代表的な旧来モデルの概数を使い、地球質量5.9722×10²⁴ kg × 質量比で算出した推定です。組成モデルによる差があり、選択した元素の全量を直接測定した値ではありません。 NASA · Earth mass ↗ DATA / Morgan & Anders (1980) · Composition model ↗
+地球の表面から中心までをふくめて考えます。材料の名前を選び、鉄やマグネシウムなどの割合をくらべましょう。
 
-出典
-- NASA · Earth mass ↗ https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
-- DATA / Morgan & Anders (1980) · Composition model ↗ https://doi.org/10.1073/pnas.77.12.6973
+やってみよう 地球を100 kgに小さくしたつもりで見よう。鉄32.1%なら、そのうち約32.1 kgが鉄です。
 
+ここでいう「ミネラル」は地球を構成する元素として整理。栄養学のミネラル、鉱物の種類、採掘可能な資源量とは区別します。元素は金属単体だけでなく、酸化物・ケイ酸塩などにも含まれます。Morgan & Anders（1980）に基づく代表的な旧来モデルの概数を使い、地球質量5.9722×10²⁴ kg × 質量比で算出した推定です。組成モデルによる差があり、選択した元素の全量を直接測定した値ではありません。
 
+体に必要な栄養の割合とはちがいます。掘って取り出せる金属の量でもなく、地球全体についての見積もりです。
 
-## 新しい3展示
+出典 https://nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html
 
-- [月が遠ざかる距離](https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession)
-- [雨1 mmの水量](https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume)
-- [深さと水圧](https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure)
+出典 https://doi.org/10.1073/pnas.77.12.6973
 
-32 / EARTH & MOON 少しずつ、遠くへ。 月は一年に、 約3.8 cm遠ざかる。 レーザー測距が捉えた、小さな変化。 時間を進めて、積み重なる距離を見てみる。 比較する年数 100年 ⏪ ■ ▶ ⏩ 手動で操作できます INCREASE IN DISTANCE / CONSTANT RATE MODEL 3.80 m 現在の代表的な後退速度を一定として計算。 位置の変化を大きく誇張した模式図。地球と月の大きさ・距離は同一縮尺ではありません。 NASAの月レーザー測距の解説に基づく概数3.8 cm/年を使用。増加分 = 0.038 m × 年数。潮汐による相互作用に関係します。速度は地球史を通じて一定ではなく、遠い過去・未来の距離をこの式で予測するものではありません。再生は100年を約10秒に圧縮します。 NASA · Lunar laser ranging ↗
-https://www.nasa.gov/missions/laser-beams-reflected-between-earth-and-moon-boost-science/
+## 月は1年に、 約3.8 cm遠ざかる。
 
-33 / RAINFALL 雨1 mmは、少ない？ 屋根に降る雨は、 何リットル？ 雨量は、水の深さ。 面積を掛けると、まとまった水の量になる。 雨を受ける面積 1 m²の地面 100 m²の屋根（仮定） 10,000 m²の校庭（仮定） 1 km²の街（仮定） 降水量 1 mm ⏪ ■ ▶ ⏩ 手動で操作できます PRECIPITATION VOLUME 100 L 水の質量は約100 kg 粒の数・速度は雨量を再現しない模式表現。実測の天気ではありません。 水量[L] = 降水量[mm] × 水平面積[m²]。1 mm × 1 m² = 0.001 m³ = 1 L。水の密度を1 kg/Lと仮定して質量へ換算。均一に降った総量で、蒸発・浸透・漏れなどを引いた実際の回収量ではありません。再生は比較する降水量を毎秒2 mmずつ増やす演出で、雨の実況や予報ではありません。 USGS · Rainfall volume ↗
-https://www.usgs.gov/water-science-school/science/water-qa-how-much-water-falls-during-a-storm
+URL https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession
 
-34 / OCEAN PRESSURE 深さに、重さがある。 潜るほどに、 水の柱が重くなる。 海面から深海へ。 頭上の水が生む、圧力の違い。 水深 100 m ⏪ ■ ▶ ⏩ 手動で操作できます ABSOLUTE PRESSURE / SIMPLIFIED MODEL 10.9 atm 水による増加分 約9.9 atm / 大気圧1 atmを含む → ← 潜水艇は模式図。物体の位置・大きさ・移動速度は実際の縮尺ではありません。 絶対圧力 P = P₀ + ρgh。P₀=101,325 Pa、海水密度ρ=1,025 kg/m³、重力加速度g=9.80665 m/s²を一定とする簡略模型。水深約10 mごとに約1 atm増加する目安と対応します。深海では圧縮・密度・重力の変化があるため精密な実測値ではありません。再生では毎秒200 mずつ模型の深さを進めます。 NOAA · Pressure and ocean depth ↗
-https://oceanservice.noaa.gov/facts/pressure.html
+地球から月に光を送り、返ってくる時間を調べると、月までのきょりがわかります。その観測から、小さな変化が見つかりました。
 
+やってみよう 年数を変えよう。毎年同じだけ遠ざかるとしたときの、きょりの増え方をくらべます。
 
-## 展示一覧と分類
+NASAの月レーザー測距の解説に基づく概数3.8 cm/年を使用。増加分 = 0.038 m × 年数。潮汐による相互作用に関係します。速度は地球史を通じて一定ではなく、遠い過去・未来の距離をこの式で予測するものではありません。再生は100年を約10秒に圧縮します。
 
-https://djnaoyaman.github.io/earthnumber/exhibits.html
+月の動きを見やすく大きくして見せています。遠い昔や未来まで、同じ速さが続くという予測ではありません。
 
-基本17展示・発展17展示。8ジャンル。編集上の学習目安であり、公式の教科書対応表ではありません。
-- 基本的知識 / 宇宙・天体 / 地球と惑星の距離 / https://djnaoyaman.github.io/earthnumber/index.html#distance
-- 発展的知識 / 宇宙・天体 / 宇宙を進む速さ / https://djnaoyaman.github.io/earthnumber/index.html#motion
-- 発展的知識 / 大気・気象 / 大気の薄さ / https://djnaoyaman.github.io/earthnumber/index.html#atmosphere
-- 発展的知識 / 地形・地球内部 / 地球の内側 / https://djnaoyaman.github.io/earthnumber/index.html#inside
-- 発展的知識 / 元素・物質 / 地球をつくる元素 / https://djnaoyaman.github.io/earthnumber/index.html#elements
-- 基本的知識 / 地形・地球内部 / 45.4億年の時計 / https://djnaoyaman.github.io/earthnumber/index.html#time
-- 基本的知識 / 海洋・水循環 / すべての水を一滴に / https://djnaoyaman.github.io/earthnumber/index.html#water
-- 発展的知識 / 環境・人間活動 / 森林と炭素の循環 / https://djnaoyaman.github.io/earthnumber/index.html#cycles
-- 基本的知識 / 物理・エネルギー / 光の速さで旅する / https://djnaoyaman.github.io/earthnumber/index.html#light
-- 発展的知識 / 宇宙・天体 / 宇宙の星と砂粒 / https://djnaoyaman.github.io/earthnumber/index.html#stars
-- 発展的知識 / 物理・エネルギー / 太陽のエネルギー / https://djnaoyaman.github.io/earthnumber/index.html#solar
-- 基本的知識 / 大気・気象 / 世界の雷の数 / https://djnaoyaman.github.io/earthnumber/index.html#lightning
-- 発展的知識 / 地形・地球内部 / 地震エネルギー / https://djnaoyaman.github.io/earthnumber/index.html#quake
-- 基本的知識 / 大気・気象 / 空気の総質量 / https://djnaoyaman.github.io/earthnumber/index.html#airmass
-- 発展的知識 / 生命・生態系 / DNAをつなぐ距離 / https://djnaoyaman.github.io/earthnumber/index.html#dna
-- 発展的知識 / 生命・生態系 / 哺乳類のバイオマス / https://djnaoyaman.github.io/earthnumber/index.html#mammals
-- 基本的知識 / 生命・生態系 / 名前のない生物 / https://djnaoyaman.github.io/earthnumber/index.html#species
-- 発展的知識 / 環境・人間活動 / 人工物と生命の重さ / https://djnaoyaman.github.io/earthnumber/index.html#humanmass
-- 基本的知識 / 環境・人間活動 / プラスチックの長さ / https://djnaoyaman.github.io/earthnumber/index.html#plastic
-- 基本的知識 / 大気・気象 / 雲の水滴の重さ / https://djnaoyaman.github.io/earthnumber/index.html#cloud
-- 基本的知識 / 宇宙・天体 / 宇宙からの塵 / https://djnaoyaman.github.io/earthnumber/index.html#dust
-- 発展的知識 / 宇宙・天体 / 一日の長さの変化 / https://djnaoyaman.github.io/earthnumber/index.html#rotation
-- 基本的知識 / 海洋・水循環 / 海底の未測量領域 / https://djnaoyaman.github.io/earthnumber/index.html#seafloor
-- 発展的知識 / 元素・物質 / 海水中の金 / https://djnaoyaman.github.io/earthnumber/index.html#gold
-- 基本的知識 / 地形・地球内部 / 海底の山脈 / https://djnaoyaman.github.io/earthnumber/index.html#ridge
-- 基本的知識 / 地形・地球内部 / プレートの動く速さ / https://djnaoyaman.github.io/earthnumber/index.html#plates
-- 発展的知識 / 地形・地球内部 / 地球内部の温度 / https://djnaoyaman.github.io/earthnumber/index.html#coreheat
-- 基本的知識 / 生命・生態系 / 巨大な菌類個体 / https://djnaoyaman.github.io/earthnumber/index.html#fungus
-- 基本的知識 / 生命・生態系 / 地球のアリの数 / https://djnaoyaman.github.io/earthnumber/index.html#ants
-- 発展的知識 / 生命・生態系 / 体内の細菌の数 / https://djnaoyaman.github.io/earthnumber/index.html#bacteria
-- 発展的知識 / 元素・物質 / 鉄と地球のミネラル / https://djnaoyaman.github.io/earthnumber/index.html#minerals
-- 発展的知識 / 宇宙・天体 / 月が遠ざかる距離 / https://djnaoyaman.github.io/earthnumber/discoveries.html#moon-recession
-- 基本的知識 / 海洋・水循環 / 雨1 mmの水量 / https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume
-- 基本的知識 / 海洋・水循環 / 深さで変わる水圧 / https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure
+出典 https://www.nasa.gov/missions/laser-beams-reflected-between-earth-and-moon-boost-science/
+
+## 屋根に降った雨を、 集めたら何L？
+
+URL https://djnaoyaman.github.io/earthnumber/discoveries.html#rain-volume
+
+雨の量を表す「mm」は、水の深さです。同じ深さの雨でも、集める場所が広いと水の量は多くなります。
+
+やってみよう 場所の広さと雨の深さを変えよう。青い水の高さが、選んだ雨の深さを表します。
+
+水量[L] = 降水量[mm] × 水平面積[m²]。1 mm × 1 m² = 0.001 m³ = 1 L。水の密度を1 kg/Lと仮定して質量へ換算。均一に降った総量で、蒸発・浸透・漏れなどを引いた実際の回収量ではありません。再生は比較する降水量を毎秒2 mmずつ増やす演出で、雨の実況や予報ではありません。
+
+集められたと考えた雨の総量です。実際には、地面にしみこんだり、こぼれたりする水もあります。
+
+出典 https://www.usgs.gov/water-science-school/science/water-qa-how-much-water-falls-during-a-storm
+
+## 海の深くへ行くと、 水圧はどうなる？
+
+URL https://djnaoyaman.github.io/earthnumber/discoveries.html#ocean-pressure
+
+水の中では、水がものを押します。この力のかかり方を水圧といいます。深い場所ほど、水圧は大きくなります。
+
+やってみよう 深さを変えよう。潜水艇の位置と、まわりから押す矢印が変わります。
+
+絶対圧力 P = P₀ + ρgh。P₀=101,325 Pa、海水密度ρ=1,025 kg/m³、重力加速度g=9.80665 m/s²を一定とする簡略模型。水深約10 mごとに約1 atm増加する目安と対応します。深海では圧縮・密度・重力の変化があるため精密な実測値ではありません。再生では毎秒200 mずつ模型の深さを進めます。
+
+数字には、水による圧力と、空気による圧力の両方をふくめています。深さによる変化をくらべるための計算です。
+
+出典 https://oceanservice.noaa.gov/facts/pressure.html

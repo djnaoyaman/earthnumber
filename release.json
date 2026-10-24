@@ -1,7 +1,9 @@
 {
-  "release": "2026-10-24-catalog",
+  "release": "2026-10-24-child-reading-review",
   "exhibits": 34,
   "basic": 17,
   "advanced": 17,
-  "genres": 8
+  "genres": 8,
+  "reviewed": 34,
+  "furigana": true
 }
