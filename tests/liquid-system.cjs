@@ -1,39 +1,25 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
-function fixture(reduced=false,hasExisting=false){let ctx,now=0,id=0,pending=new Map(),lastImage,clears=0,observer;const all=[];
- function el(tag='DIV'){const e={tagName:tag,events:{},attrs:{},style:{},disabled:false,textContent:'',setAttribute(k,v){this.attrs[k]=v},remove(){this.removed=true},append(){},matches(){return true},getBoundingClientRect(){return {left:0,top:0,width:100,height:44}},addEventListener(k,fn,opt={}){this.events[k]=fn;opt.signal?.addEventListener('abort',()=>{if(this.events[k]===fn)delete this.events[k]})}};all.push(e);return e;}
- const body=el(),classes=new Set();body.classList={contains:k=>classes.has(k),toggle(k,on){if(on)classes.add(k);else classes.delete(k)},add(...ks){ks.forEach(k=>classes.add(k))},remove(...ks){ks.forEach(k=>classes.delete(k))}};body.prepend=e=>body.canvas=e;
- const mainToggle=el('BUTTON');const doc=el();doc.body=body;doc.hidden=false;doc.createElement=tag=>{const e=el(tag);if(tag==='canvas')e.getContext=()=>({clearRect(){clears++},createImageData(w,h){return {data:new Uint8ClampedArray(w*h*4)}},putImageData(image){lastImage=image}});return e};doc.querySelector=s=>s==='header'?el():s==='#motionToggle'&&hasExisting?mainToggle:null;
- const media=el();media.matches=reduced;const win=el();ctx={window:win,document:doc,innerWidth:1200,innerHeight:800,scrollY:0,AbortController,Float32Array,matchMedia:()=>media,localStorage:{getItem(){return null},setItem(){}},performance:{now:()=>now},requestAnimationFrame:fn=>{pending.set(++id,fn);return id},cancelAnimationFrame:i=>pending.delete(i),MutationObserver:class{constructor(fn){observer=fn}observe(){}disconnect(){}}};
- function execute(){vm.runInNewContext(fs.readFileSync('earth-experience.js','utf8'),ctx)}execute();
- function run(t){now=t;const tasks=[...pending.values()];pending.clear();tasks.forEach(f=>f(t));}
- return {ctx,win,doc,media,all,pending,run,execute,mutate:()=>observer?.(),setTime:t=>now=t,get image(){return lastImage},get clears(){return clears}};
+const source=fs.readFileSync('earth-experience.js','utf8');
+function fixture(reduced=false,portrait=false,webgl=false){let now=0,id=0,observe;const pending=new Map(),all=[];
+ function el(tag='div'){const classes=new Set();const e={tagName:tag,events:{},attrs:{},children:[],classList:{contains:k=>classes.has(k),add(...ks){ks.forEach(k=>classes.add(k))},remove(...ks){ks.forEach(k=>classes.delete(k))}},setAttribute(k,v){this.attrs[k]=v},removeAttribute(k){delete this[k];delete this.attrs[k]},append(...es){this.children.push(...es)},prepend(e){this.children.unshift(e)},before(e){this.beforeNode=e},remove(){this.removed=true},getBoundingClientRect(){return {left:10,top:10,width:100,height:44}},addEventListener(k,fn,opt={}){this.events[k]=fn;opt.signal?.addEventListener('abort',()=>{delete this.events[k]})}};all.push(e);return e;}
+ const body=el(),header=el(),footer=el(),doc=el();doc.body=body;doc.hidden=false;doc.querySelector=s=>s==='footer'?footer:s==='header'||s==='.header-actions'?header:null;
+ doc.createElement=tag=>{const e=el(tag);if(tag==='canvas')e.getContext=()=>webgl?new Proxy({created:0,getShaderParameter:()=>true,getProgramParameter:()=>true,getAttribLocation:()=>0,getUniformLocation:()=>1,createProgram:()=>({}),createShader:()=>({}),createBuffer:()=>({}),createTexture:()=>({}),texImage2D(...args){if(args.length===9){const a=args[8];assert(a.every(Number.isFinite));}}},{get:(o,k)=>k in o?o[k]:/^[A-Z_0-9]+$/.test(k)?1:()=>{}}):null;if(tag==='video'){e.playCalls=0;e.pauseCalls=0;e.readyState=4;e.videoWidth=768;e.videoHeight=432;e.play=async()=>{e.playCalls++;if(e.reject)throw Error('play')};e.pause=()=>e.pauseCalls++;e.load=()=>{e.loaded=true};}return e;};
+ const media=el();media.matches=reduced;const win=el();const ctx={window:win,document:doc,innerWidth:portrait?390:1200,innerHeight:portrait?844:800,AbortController,Float32Array,Uint8Array,matchMedia:()=>media,performance:{now:()=>now},requestAnimationFrame:fn=>{pending.set(++id,fn);return id},cancelAnimationFrame:i=>pending.delete(i),MutationObserver:class{constructor(fn){observe=fn}observe(){}disconnect(){}}};
+ const execute=()=>vm.runInNewContext(source,ctx);execute();
+ return {win,doc,media,header,footer,all,pending,execute,mutate:()=>observe(),get video(){return all.filter(e=>e.tagName==='video'&&!e.removed).at(-1)},get toggle(){return header.children.at(-1)},run(t){now=t;const tasks=[...pending.values()];pending.clear();tasks.forEach(f=>f(t));}};
 }
-let f=fixture();assert.equal(f.pending.size,0,'idle has no frame loop');assert.equal(f.doc.body.canvas.attrs['aria-hidden'],'true');assert(f.doc.body.canvas.width<=320&&f.doc.body.canvas.height<=320);
-const baseline=Uint8ClampedArray.from(f.image.data);
-f.doc.events.pointerdown({clientX:600,clientY:400});for(let t=0;t<1000;t+=34)f.run(t);assert(f.image.data.some((x,i)=>i%4===3&&x>0),'wave paints alpha');assert(f.image.data.every(Number.isFinite));for(let t=1000;t<5000;t+=34)f.run(t);assert.equal(f.pending.size,0,'settled surface stops work');assert.deepEqual(f.image.data,baseline,'settled surface returns exactly to static contour without a hard blank');assert(f.image.data.every((v,i)=>i%4!==3||v<=125),'alpha capped');
-f.setTime(6000);f.doc.events.pointermove({clientX:-200,clientY:99999,buttons:1});f.run(6034);assert(f.image.data.every(Number.isFinite));f.doc.hidden=true;f.doc.events.visibilitychange();assert.equal(f.pending.size,0);f.doc.hidden=false;f.doc.events.visibilitychange();assert.equal(f.pending.size,1);
-f.win.earthLiquidExperience.destroy();assert.equal(f.pending.size,0);assert(!f.doc.events.pointerdown,'abort removes input listener');f.execute();assert(f.win.earthLiquidExperience);f.win.earthLiquidExperience.destroy();
-f=fixture(true);f.doc.events.pointerdown({clientX:200,clientY:200});assert.equal(f.pending.size,0,'reduced motion schedules no frames');f.win.earthLiquidExperience.destroy();console.log('PASS bounded field, pointer response, idle settle, hidden pause, cleanup/reinit and reduced motion');
-
-f=fixture(false,true);f.doc.events.pointerdown({clientX:300,clientY:200});assert.equal(f.pending.size,1);f.doc.body.classList.add('motion-paused');f.mutate();assert.equal(f.pending.size,0,'existing global stop cancels field');f.doc.body.classList.remove('motion-paused');f.mutate();f.doc.events.pointerdown({clientX:300,clientY:200});assert.equal(f.pending.size,1,'existing global resume allows response');f.media.matches=true;f.media.events.change({matches:true});f.mutate();assert.equal(f.pending.size,0,'own class mutation cannot undo reduced motion');f.win.earthLiquidExperience.destroy();console.log('PASS main global pause/resume and reduced-motion observer feedback');
-
-if(process.env.RENDER_FRAMES){
- const shot=fixture();shot.doc.events.pointerdown({clientX:600,clientY:400});
- for(let t=0;t<=1836;t+=34){shot.run(t);if([204,816,1802].includes(t)){fs.writeFileSync('/tmp/earth-material-'+t+'.rgba',shot.image.data);fs.writeFileSync('/tmp/earth-material-size.json',JSON.stringify([shot.doc.body.canvas.width,shot.doc.body.canvas.height]));}}
- shot.win.earthLiquidExperience.destroy();
-}
-
-if(process.env.RENDER_FRAMES){
- const stroke=fixture();stroke.doc.events.pointerdown({clientX:240,clientY:400});
- for(let t=0;t<=3604;t+=34){stroke.setTime(t);if(t<=1360&&t%68===0)stroke.doc.events.pointermove({clientX:240+t/1360*720,clientY:400,buttons:1});stroke.run(t);if([1564,2176,3162].includes(t))fs.writeFileSync('/tmp/earth-material-stroke-'+t+'.rgba',stroke.image.data);}
- stroke.win.earthLiquidExperience.destroy();
-}
-
-f=fixture();f.doc.events.pointerdown({clientX:300,clientY:300});
-for(let t=0;t<5000;t+=34)f.run(t);
-f.setTime(6000);f.doc.events.pointermove({clientX:300,clientY:300,buttons:1});
-assert.equal(f.pending.size,0,'stationary pointer adds no repeated circular impulse');
-f.setTime(6100);f.doc.events.pointermove({clientX:600,clientY:300,buttons:1});f.run(6134);
-assert.equal(f.pending.size,1,'directional movement creates a wake');
-assert(f.image.data.every(Number.isFinite));f.win.earthLiquidExperience.destroy();
-console.log('PASS stationary gesture injects no energy; movement creates a finite directional wake');
+const flush=()=>new Promise(r=>setImmediate(r));
+(async()=>{
+ let f=fixture();assert.equal(f.video.src,undefined,'no video request before explicit start');assert.equal(f.video.preload,'none');assert.equal(f.pending.size,0);assert(f.video.muted&&f.video.playsInline);f.doc.events.pointerdown({clientX:200,clientY:300});assert.equal(f.video.src,undefined);
+ f.toggle.events.click();await flush();assert(f.video.src.endsWith('-768.mp4'));assert.equal(f.pending.size,0);assert.equal(f.toggle.attrs['aria-pressed'],'true');f.run(50);assert.equal(f.pending.size,0,'ordinary video fallback needs no JS frame loop');
+ f.doc.body.classList.add('motion-paused');f.mutate();assert.equal(f.pending.size,0);assert(f.toggle.disabled);f.doc.body.classList.remove('motion-paused');f.mutate();await flush();assert.equal(f.pending.size,0);
+ f.doc.hidden=true;f.doc.events.visibilitychange();assert.equal(f.pending.size,0);f.doc.hidden=false;f.doc.events.visibilitychange();await flush();assert.equal(f.pending.size,0);
+ f.toggle.events.click();assert.equal(f.pending.size,0);f.media.matches=true;f.media.events.change();assert(f.toggle.disabled);f.media.matches=false;f.media.events.change();await flush();assert.equal(f.pending.size,0,'reduced preference change does not override explicit stop');
+ const old=f.video;f.execute();assert.equal(old.src,undefined);assert(old.loaded);assert.equal(f.pending.size,0);assert.equal(f.video.src,undefined);f.win.earthLiquidExperience.destroy();assert(!f.doc.events.pointerdown);assert(!f.doc.events.keydown);
+ f=fixture(true);assert(f.toggle.disabled);assert.equal(f.video.src,undefined);assert.equal(f.pending.size,0);f.win.earthLiquidExperience.destroy();
+ f=fixture(false,true);f.toggle.events.click();await flush();assert(f.video.src.includes('portrait'));f.video.events.error();assert.equal(f.pending.size,0);assert.equal(f.toggle.attrs['aria-pressed'],'false');f.video.reject=true;f.toggle.events.click();await flush();assert.equal(f.pending.size,0);f.win.earthLiquidExperience.destroy();
+ f=fixture(false,false,true);f.toggle.events.click();await flush();f.doc.events.pointerdown({clientX:-999,clientY:99999});for(let t=50;t<=4100;t+=50){f.doc.events.pointermove({clientX:t/4,clientY:400,buttons:1});f.run(t);}f.doc.events.keydown({key:'Enter',target:f.toggle});f.run(4200);f.all.find(e=>e.tagName==='canvas').events.webglcontextlost({preventDefault(){}});f.run(4300);f.win.earthLiquidExperience.destroy();assert.equal(f.pending.size,0);
+ f=fixture(false,false,true);let rejectOld,resolveNew;let calls=0;f.video.play=()=>++calls===1?new Promise((_,reject)=>rejectOld=reject):new Promise(resolve=>resolveNew=resolve);f.toggle.events.click();f.toggle.events.click();f.toggle.events.click();rejectOld(Error('AbortError'));await flush();resolveNew();await flush();assert.equal(f.toggle.attrs['aria-pressed'],'true','stale rejection cannot override latest start');assert.equal(f.pending.size,1);f.win.earthLiquidExperience.destroy();
+ assert(!source.includes('preventDefault()')||source.includes("'webglcontextlost',e=>{e.preventDefault()"));assert(source.includes('longEdge=innerWidth<760?680:960'));assert(source.includes('Math.min(12,'));
+ console.log('PASS opt-in media, reduced motion, portrait source, global/local/visibility pause, play/error fallback, repeated init and cleanup');
+})().catch(e=>{console.error(e);process.exitCode=1});
