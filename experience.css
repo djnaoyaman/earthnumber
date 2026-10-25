@@ -22,3 +22,7 @@ input[type=range]{min-height:32px;padding-block:12px;background:transparent}
 .catalog-entry:focus-visible,.earth-paths a:focus-visible{outline:3px solid #ef6c35;outline-offset:4px}
 @media(max-width:760px){.earth-entry-head{display:block}.earth-entry-head p{margin-top:16px;font-size:13px}.earth-paths{grid-template-columns:1fr}.earth-paths a{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:17px 0}.earth-paths span{grid-column:1/-1;grid-row:2}.earth-paths strong{font-size:17px}.water-surface-controls{padding:12px;gap:8px}.water-surface-controls [role=status]{margin:0;width:100%;font-size:11px}.water-surface-label{left:16px;font-size:10px}.water-surface-controls button{font-size:11px;padding-inline:14px}.section-head>span:last-child{font-size:13px}.learning-badge{font-size:10px}.exhibit .source{font-size:11px}.exhibit .kid-guide p,.exhibit .kid-caution{font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.earth-paths a{transition:none}}
+
+/* Keep reading positions stable. Resume must not replay foreground entrance motion. */
+.hero-title,.hero-number,.exhibit.was-seen h2,.exhibit.was-seen .value,.exhibit.was-seen .power-number{animation:none!important;transform:none!important;opacity:1!important}
+.water.in-view #waterSphere{animation:none!important;transform:none!important}
