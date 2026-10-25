@@ -1,0 +1,24 @@
+/* Interaction layer: factual diagrams remain untouched. */
+.earth-entry{padding:clamp(28px,5vw,76px) 5%;background:#edf4f6;color:#0a1f5c}
+.earth-entry-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:26px}
+.earth-entry h2{font-size:clamp(27px,4.5vw,56px);line-height:1.5;margin:7px 0 0;letter-spacing:-.04em}
+.earth-entry-head p{max-width:26em;font-size:14px;line-height:2;margin:0}
+.water-surface{position:relative;border-radius:4px;overflow:hidden;background:#07577f;box-shadow:0 18px 45px #12374b18}
+.water-surface canvas{display:block;width:100%;height:clamp(240px,36vw,430px);cursor:crosshair;touch-action:pan-y pinch-zoom;outline-offset:-6px}
+.water-surface canvas:focus-visible{outline:3px solid white}
+.water-surface-label{position:absolute;left:24px;top:20px;color:#fff;font-size:11px;letter-spacing:.12em;pointer-events:none;text-shadow:0 1px 5px #00314b}
+.water-surface-controls{display:flex;align-items:center;gap:10px;padding:16px 20px;background:#043e62;color:white;flex-wrap:wrap}
+.water-surface-controls button{background:transparent;color:white;border:1px solid #9bc4d5;border-radius:24px;padding:8px 18px;font-size:12px;min-height:44px}
+.water-surface-controls button:hover{background:#ffffff18}
+.water-surface-controls button:disabled{opacity:.55;cursor:default}
+.water-surface-controls [role=status]{font-size:12px;line-height:1.8;margin-left:auto;max-width:29em}
+.earth-entry .surface-note{font-size:12px;line-height:2;margin:15px 0 26px;color:#405a73}
+.earth-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.earth-paths a{display:flex;flex-direction:column;gap:10px;border-top:1px solid #8caab8;padding:18px 6px;transition:background .2s}
+.earth-paths a:hover{background:#fff9}.earth-paths strong{font-size:18px}.earth-paths span{font-size:12px;line-height:1.8}.earth-paths small{font-size:11px;color:#0033ad}
+:where(button,summary,.header-catalog,.back-to-top){min-height:44px}
+input[type=range]{min-height:32px;padding-block:12px;background:transparent}
+.source{padding-block:7px}.science-detail summary{padding-block:12px}
+.catalog-entry:focus-visible,.earth-paths a:focus-visible{outline:3px solid #ef6c35;outline-offset:4px}
+@media(max-width:760px){.earth-entry-head{display:block}.earth-entry-head p{margin-top:16px;font-size:13px}.earth-paths{grid-template-columns:1fr}.earth-paths a{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:17px 0}.earth-paths span{grid-column:1/-1;grid-row:2}.earth-paths strong{font-size:17px}.water-surface-controls{padding:12px;gap:8px}.water-surface-controls [role=status]{margin:0;width:100%;font-size:11px}.water-surface-label{left:16px;font-size:10px}.water-surface-controls button{font-size:11px;padding-inline:14px}.section-head>span:last-child{font-size:13px}.learning-badge{font-size:10px}.exhibit .source{font-size:11px}.exhibit .kid-guide p,.exhibit .kid-caution{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.earth-paths a{transition:none}}
