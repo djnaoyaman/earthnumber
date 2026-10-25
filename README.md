@@ -32,3 +32,23 @@ Published with GitHub Pages from `main` / repository root. Every push to `main` 
 ## Exhibit catalog
 
 All 34 exhibits are listed at `exhibits.html`, grouped first by learning level (17 basic / 17 advanced), then by eight genres. This is an editorial learning guide, not an official syllabus mapping. Catalog data is maintained in `catalog-data.js`; the main-page menu consumes the same data. The catalog supports level, genre and keyword filtering, shareable query parameters and a no-JavaScript static listing. A keyboard-accessible back-to-top control is available on all four pages.
+
+## Site-wide interaction contract
+
+The liquid request covers the whole reading and interaction experience, not an
+extra water exhibit. `earth-experience.js` provides one bounded, fixed light field
+on all four pages (31 main exhibits, 3 additional exhibits, catalog and author).
+Pointer/keyboard interaction and normal scrolling produce a damped response.
+The field is expressive, not a scientific measurement. Numbers, text, diagram
+geometry and control positions must never be displaced for decoration.
+
+The field does not capture pointers or prevent scrolling. It stops scheduling
+frames after settling, while hidden or paused, and respects reduced motion.
+Main-page motion controls govern it; other pages expose a clearly labelled
+background light/wave control without silently changing the scientific players.
+Keep foreground entrance animations disabled: changing `animation:none` on pause
+and restoring entrance keyframes caused a verified 25px jump on resume.
+
+Regression checks: `node tests/stable-layout.cjs` and
+`node tests/liquid-system.cjs`. Real browser geometry checks remain necessary;
+unit/source checks alone do not establish mobile visual correctness.
