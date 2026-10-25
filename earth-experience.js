@@ -32,7 +32,7 @@
       const nx=x>0&&x<width-1?current[i+1]-current[i-1]:0;
       const ny=y>0&&y<height-1?current[i+width]-current[i-width]:0;
       // Refract a quiet contour texture, rather than stamping blurred cursor dots.
-      const tx=clamp(x+nx*4,0,width-1.001),ty=clamp(y+ny*4,0,height-1.001);
+      const tx=clamp(x+nx*4*fade,0,width-1.001),ty=clamp(y+ny*4*fade,0,height-1.001);
       const ix=floor(tx),iy=floor(ty),fx=tx-ix,fy=ty-iy;
       const top=texture[iy*width+ix]*(1-fx)+texture[iy*width+ix+1]*fx;
       const bottom=texture[(iy+1)*width+ix]*(1-fx)+texture[(iy+1)*width+ix+1]*fx;
