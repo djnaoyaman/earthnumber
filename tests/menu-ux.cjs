@@ -13,3 +13,13 @@ ctx.toggleMenu(true);assert(!menu.hidden);assert(header.inert&&main.inert);asser
 const opener=el('deep-exhibit');doc.activeElement=opener;ctx.toggleMenu(true);handlers.keydown({key:'Escape',preventDefault(){}});assert.equal(doc.activeElement,opener,'returns to originating exhibit rather than page top');
 ctx.toggleMenu(true);nodes.menuSearch.value='水';ctx.filterMenu();assert.equal(links.filter(l=>!l.hidden).length,2);assert.equal(groups[1].hidden,true);nodes.menuSearch.value='存在しない';ctx.filterMenu();assert.equal(nodes.menuEmpty.hidden,false);assert.equal(nodes.menuSearchCount.textContent,'0 / 34 の展示');nodes.clearMenuSearch.onclick();assert(links.every(l=>!l.hidden));assert.equal(nodes.menuEmpty.hidden,true);
 let prevented=false;doc.activeElement=links.at(-1);menu.events.keydown({key:'Tab',shiftKey:false,preventDefault(){prevented=true}});assert(prevented);assert.equal(doc.activeElement,nodes.closeMenu);ctx.toggleMenu(false);console.log('PASS menu repeat open/close, original focus, inert restoration, search/no-results/reset and focus trap');
+
+// Execute the real late-loaded menu integration, not only the isolated app handlers.
+let injected='';
+const more=fs.readFileSync('more.js','utf8'),integration=more.split('// All 34 published exhibits, using the shared learning-level and genre catalog.')[1].split("$$('.exhibit')")[0];
+vm.runInNewContext(integration,{$:s=>{assert.equal(s,'#menuLinks');return {insertAdjacentHTML(_where,html){injected+=html}}}});
+const combined=fs.readFileSync('index.html','utf8')+injected;
+assert.equal((combined.match(/type="search"/g)||[]).length,1,'one search input after more.js initialization');
+assert(!more.includes('indexSearch')&&!more.includes('indexCount'),'no legacy second filter or stale count');
+assert(injected.includes('href="exhibits.html"'),'catalog link retained');
+console.log('PASS actual more.js menu integration has one search input/filter and preserved catalog link');
