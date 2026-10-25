@@ -3,9 +3,38 @@ const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const chapters=[['distance','惑星との距離','SPACE'],['motion','宇宙を進む速さ','MOTION'],['atmosphere','大気の薄さ','ATMOSPHERE'],['inside','地球の内側','BELOW OUR FEET'],['elements','地球をつくる元素','ELEMENTS'],['time','45.4億年の時計','DEEP TIME'],['water','すべての水を一滴に','WATER'],['cycles','森林と炭素の循環','LIVING PLANET']];
 function renderMenu(){const c=EARTH_CATALOG;$('#menuLinks').innerHTML=Object.entries(c.levels).map(([level,l])=>`<section class="menu-level-group"><h2>${l.name}<small>${l.range}</small></h2>${Object.entries(c.genres).map(([genre,g])=>{let es=c.exhibits.filter(e=>e.level===level&&e.genre===genre);return es.length?`<section class="menu-category"><h3>${g}</h3><div class="menu-category-links">${es.map(e=>`<a href="${e.href}" data-search="${[e.title,e.description,e.concepts,g,l.name].join(' ').toLowerCase()}"><span>${String(e.number).padStart(2,'0')}</span>${e.title} ↗</a>`).join('')}</div></section>`:''}).join('')}</section>`).join('');$('#menuLinks').querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));}
 
-function toggleMenu(open){$('#menu').hidden=!open;$('#menuBtn').setAttribute('aria-expanded',open);document.body.style.overflow=open?'hidden':'';if(open)$('#closeMenu').focus();else $('#menuBtn').focus()}
-$('#menuBtn').onclick=()=>toggleMenu(true);$('#closeMenu').onclick=()=>toggleMenu(false);document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#menu').hidden)toggleMenu(false)});
-$('#menu').addEventListener('keydown',e=>{if(e.key!=='Tab')return;const els=$$('#menu button,#menu a');let first=els[0],last=els.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+let menuReturnFocus=null,menuPreviousOverflow='',menuBackground=[];
+function toggleMenu(open){
+  const menu=$('#menu');
+  if(open===!menu.hidden)return;
+  if(open){
+    menuReturnFocus=document.activeElement;menuPreviousOverflow=document.body.style.overflow;
+    menuBackground=[...document.body.children].filter(e=>e!==menu&&!['SCRIPT','STYLE'].includes(e.tagName)).map(e=>[e,e.inert]);
+    menuBackground.forEach(([e])=>e.inert=true);menu.hidden=false;document.body.style.overflow='hidden';$('#menuSearch').focus();
+  }else{
+    menu.hidden=true;document.body.style.overflow=menuPreviousOverflow;menuBackground.forEach(([e,was])=>e.inert=was);menuBackground=[];
+    (menuReturnFocus?.isConnected?menuReturnFocus:$('#menuBtn')).focus({preventScroll:true});
+  }
+  $('#menuBtn').setAttribute('aria-expanded',String(open));
+}
+$('#menuBtn').onclick=()=>toggleMenu(true);$('#closeMenu').onclick=()=>toggleMenu(false);
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!$('#menu').hidden){e.preventDefault();toggleMenu(false)}});
+$('#menu').addEventListener('keydown',e=>{
+  if(e.key!=='Tab')return;
+  const els=[...$('#menu').querySelectorAll('button,a,input')].filter(e=>!e.disabled&&!e.closest('[hidden]'));
+  const first=els[0],last=els.at(-1);
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+});
+function filterMenu(){
+  const query=$('#menuSearch').value.trim().normalize('NFKC').toLocaleLowerCase();let count=0;
+  $$('#menuLinks a').forEach(a=>{a.hidden=!!query&&!a.dataset.search.normalize('NFKC').includes(query);if(!a.hidden)count++});
+  $$('#menuLinks .menu-category').forEach(g=>g.hidden=![...g.querySelectorAll('a')].some(a=>!a.hidden));
+  $$('#menuLinks .menu-level-group').forEach(g=>g.hidden=![...g.querySelectorAll('a')].some(a=>!a.hidden));
+  $('#menuSearchCount').textContent=count+' / 34 の展示';$('#menuEmpty').hidden=count!==0;
+}
+$('#menuSearch').addEventListener('input',filterMenu);$('#clearMenuSearch').onclick=()=>{$('#menuSearch').value='';filterMenu();$('#menuSearch').focus()};
+$('#menu').addEventListener('click',e=>{if(e.target.closest('a'))toggleMenu(false)});
 const planets=[['水星','MERCURY',.387,'#b9b4a5'],['金星','VENUS',.723,'#d1bc8b'],['火星','MARS',1.524,'#f47954'],['木星','JUPITER',5.203,'#c1a98b'],['土星','SATURN',9.537,'#ddcc9f'],['天王星','URANUS',19.191,'#a7dad7'],['海王星','NEPTUNE',30.069,'#879fe9']];let planetIndex=2;
 $('#planetButtons').innerHTML=planets.map((p,i)=>`<button data-planet="${i}" aria-pressed="${i===2}" class="${i===2?'active':''}">${p[0]}</button>`).join('');
 function updateDistance(){const p=planets[planetIndex],deg=+$('#phase').value,t=deg*Math.PI/180,au=Math.sqrt(1+p[2]**2-2*p[2]*Math.cos(t)),km=au*149597870.7,sec=km/299792.458;$('#destEn').textContent=p[1];$('#distanceNum').textContent=(km/1e8).toFixed(2);$('#lightTime').textContent=`光で約${Math.floor(sec/60)}分${Math.round(sec%60)}秒`;$('#phaseLabel').textContent=deg===0?'同じ方向':deg===180?'反対方向':`${deg}°`;const ex=650,ey=210,px=500+Math.cos(t)*320,py=210-Math.sin(t)*165;$('#orbit').innerHTML=`<g fill="none" stroke="#789BE6" stroke-width=".7"><ellipse cx="500" cy="210" rx="150" ry="78"/><ellipse cx="500" cy="210" rx="320" ry="165"/><path d="M60 210h880M500 15v390" stroke-dasharray="2 6"/></g><line x1="${ex}" y1="${ey}" x2="${px}" y2="${py}" stroke="#EEF2FB" stroke-dasharray="4 5"/><circle cx="500" cy="210" r="19" fill="#e6c685"/><circle cx="${ex}" cy="${ey}" r="8" fill="#EEF2FB"/><circle cx="${px}" cy="${py}" r="${planetIndex>2?15:9}" fill="${p[3]}"/><g fill="#e9e8e2" font-family="sans-serif" font-size="12"><text x="485" y="250">SUN</text><text x="${ex-22}" y="${ey+32}">EARTH</text><text x="${px-22}" y="${py-25}">${p[1]}</text></g>`;$$('[data-planet]').forEach((b,i)=>{b.classList.toggle('active',i===planetIndex);b.setAttribute('aria-pressed',i===planetIndex)})}
