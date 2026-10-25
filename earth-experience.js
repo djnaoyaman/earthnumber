@@ -29,15 +29,16 @@
     const p=pixels.data;
     for(let y=0;y<height;y++)for(let x=0;x<width;x++){
       const i=y*width+x,j=i*4;
-      const nx=x>0&&x<width-1?current[i+1]-current[i-1]:0;
-      const ny=y>0&&y<height-1?current[i+width]-current[i-width]:0;
+      const interior=x>0&&x<width-1&&y>0&&y<height-1;
+      const nx=interior?((current[i+1]-current[i-1])*2+current[i+width+1]-current[i+width-1]+current[i-width+1]-current[i-width-1])/4:0;
+      const ny=interior?((current[i+width]-current[i-width])*2+current[i+width+1]-current[i-width+1]+current[i+width-1]-current[i-width-1])/4:0;
       // Refract a quiet contour texture, rather than stamping blurred cursor dots.
       const tx=clamp(x+nx*4*fade,0,width-1.001),ty=clamp(y+ny*4*fade,0,height-1.001);
       const ix=floor(tx),iy=floor(ty),fx=tx-ix,fy=ty-iy;
       const top=texture[iy*width+ix]*(1-fx)+texture[iy*width+ix+1]*fx;
       const bottom=texture[(iy+1)*width+ix]*(1-fx)+texture[(iy+1)*width+ix+1]*fx;
       const contour=top*(1-fy)+bottom*fy;
-      const light=nx*.7+ny*.9,crest=min(85,sqrt(abs(light))*120)*fade;
+      const light=nx*.7+ny*.9,crest=min(85,abs(light)*280)*fade;
       const alpha=contour+crest,mix=crest/max(1,alpha),positive=light>0;
       p[j]=80*(1-mix)+(positive?145:10)*mix;
       p[j+1]=158*(1-mix)+(positive?222:85)*mix;
@@ -48,7 +49,7 @@
   }
   function step(){
     for(let y=1;y<height-1;y++)for(let x=1;x<width-1;x++){
-      const i=y*width+x;previous[i]=((current[i-1]+current[i+1]+current[i-width]+current[i+width])*.5-previous[i])*.989;
+      const i=y*width+x;previous[i]=((current[i-1]+current[i+1]+current[i-width]+current[i+width])*.5-previous[i])*.985;
     }
     const swap=previous;previous=current;current=swap;
   }
@@ -60,8 +61,18 @@
   function wake(){if(allowed()&&!frame)frame=requestAnimationFrame(tick);}
   function ripple(x,y,strength=3){
     if(!allowed())return;
-    const cx=clamp(Math.round(x*width),5,width-6),cy=clamp(Math.round(y*height),5,height-6);
-    for(let dy=-5;dy<=5;dy++)for(let dx=-5;dx<=5;dx++){const i=(cy+dy)*width+cx+dx,depth=exp(-(dx*dx+dy*dy)/9)*strength;current[i]-=depth;previous[i]-=depth;}
+    const cx=clamp(x*width,6,width-7),cy=clamp(y*height,6,height-7),ix=floor(cx),iy=floor(cy);
+    for(let dy=-5;dy<=5;dy++)for(let dx=-5;dx<=5;dx++){const i=(iy+dy)*width+ix+dx,xx=ix+dx-cx,yy=iy+dy-cy,depth=exp(-(xx*xx+yy*yy)/12)*strength;current[i]-=depth;previous[i]-=depth;}
+    activeUntil=performance.now()+4200;wake();
+  }
+  function wakeStroke(x,y,ux,uy,energy){
+    if(!allowed()||energy<=0)return;
+    const cx=clamp(x*width,9,width-10),cy=clamp(y*height,9,height-10),ix=floor(cx),iy=floor(cy);
+    for(let dy=-8;dy<=8;dy++)for(let dx=-8;dx<=8;dx++){
+      const xx=ix+dx-cx,yy=iy+dy-cy,along=xx*ux+yy*uy,across=-xx*uy+yy*ux;
+      const depth=exp(-along*along/24-across*across/16)*along*.35*energy;
+      const i=(iy+dy)*width+ix+dx;current[i]+=depth;previous[i]+=depth;
+    }
     activeUntil=performance.now()+4200;wake();
   }
   function setPaused(next){
@@ -69,14 +80,15 @@
     if(ownToggle){ownToggle.textContent=paused?'光と波を動かす':'光と波を止める';ownToggle.setAttribute('aria-pressed',String(paused));ownToggle.disabled=reduced.matches;if(reduced.matches)ownToggle.textContent='動きを少なくする設定中';}
     if(paused){if(frame)cancelAnimationFrame(frame);frame=0;current.fill(0);previous.fill(0);context.clearRect(0,0,width,height);}else draw(0);
   }
-  listen(document,'pointerdown',e=>{lastPoint={x:e.clientX,y:e.clientY};ripple(e.clientX/innerWidth,e.clientY/innerHeight,8);},{passive:true});
+  listen(document,'pointerdown',e=>{lastPoint={x:e.clientX,y:e.clientY};ripple(e.clientX/innerWidth,e.clientY/innerHeight,1.6);},{passive:true});
   listen(document,'pointermove',e=>{
     const now=performance.now();if(now-pointerTime<55)return;pointerTime=now;
-    const target={x:e.clientX,y:e.clientY},start=e.buttons&&lastPoint?lastPoint:target;
+    const target={x:e.clientX,y:e.clientY},start=lastPoint||target;
     const distance=hypot(target.x-start.x,target.y-start.y);
     const steps=min(16,max(1,ceil(distance/14)));
-    const energy=e.buttons?min(3.2,distance*.055):.8;
-    for(let i=1;i<=steps;i++)ripple((start.x+(target.x-start.x)*i/steps)/innerWidth,(start.y+(target.y-start.y)*i/steps)/innerHeight,energy/steps);
+    const energy=min(e.buttons?2.6:.65,distance*.04);
+    const ux=(target.x-start.x)/max(1,distance),uy=(target.y-start.y)/max(1,distance);
+    for(let i=1;i<=steps;i++)wakeStroke((start.x+(target.x-start.x)*i/steps)/innerWidth,(start.y+(target.y-start.y)*i/steps)/innerHeight,ux,uy,energy/steps);
     lastPoint=target;
   },{passive:true});
   listen(document,'pointerup',()=>{lastPoint=null;},{passive:true});
