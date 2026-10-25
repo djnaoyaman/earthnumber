@@ -14,3 +14,7 @@ input[type=range]{min-height:32px;padding-block:12px;background:transparent}
 
 .hero-title,.hero-number,.exhibit.was-seen h2,.exhibit.was-seen .value,.exhibit.was-seen .power-number{animation:none!important;transform:none!important;opacity:1!important}
 .water.in-view #waterSphere{animation:none!important;transform:none!important}
+
+/* Search stays available without making the page beneath the dialog interactive. */
+.menu-search{max-width:720px;padding:24px 0 0}.menu-search label{display:block;font-size:14px;font-weight:600;margin-bottom:10px}.menu-search>div{display:flex;gap:10px}.menu-search input{width:100%;min-width:0;border:1px solid #6481ae;background:#fff;color:#0a1f5c;border-radius:4px;padding:13px 16px;font:inherit;font-size:16px}.menu-search button{border:1px solid #6481ae;border-radius:4px;padding:10px 18px;background:transparent;white-space:nowrap}.menu-search p{font-size:13px;line-height:2}#menuLinks a[hidden]{display:none!important}.menu-top{position:sticky;top:-40px;background:#fff;z-index:2;padding-top:12px}.menu-search input:focus-visible{outline:3px solid #e7744c;outline-offset:3px}
+@media(max-width:760px){.menu-top{top:-25px}.menu-search{padding-top:18px}.menu-search button{padding-inline:12px}.menu-search label{font-size:13px}}
