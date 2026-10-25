@@ -1,27 +1,19 @@
-/* Interaction layer: factual diagrams remain untouched. */
-.earth-entry{padding:clamp(28px,5vw,76px) 5%;background:#edf4f6;color:#0a1f5c}
-.earth-entry-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:26px}
-.earth-entry h2{font-size:clamp(27px,4.5vw,56px);line-height:1.5;margin:7px 0 0;letter-spacing:-.04em}
-.earth-entry-head p{max-width:26em;font-size:14px;line-height:2;margin:0}
-.water-surface{position:relative;border-radius:4px;overflow:hidden;background:#07577f;box-shadow:0 18px 45px #12374b18}
-.water-surface canvas{display:block;width:100%;height:clamp(240px,36vw,430px);cursor:crosshair;touch-action:pan-y pinch-zoom;outline-offset:-6px}
-.water-surface canvas:focus-visible{outline:3px solid white}
-.water-surface-label{position:absolute;left:24px;top:20px;color:#fff;font-size:11px;letter-spacing:.12em;pointer-events:none;text-shadow:0 1px 5px #00314b}
-.water-surface-controls{display:flex;align-items:center;gap:10px;padding:16px 20px;background:#043e62;color:white;flex-wrap:wrap}
-.water-surface-controls button{background:transparent;color:white;border:1px solid #9bc4d5;border-radius:24px;padding:8px 18px;font-size:12px;min-height:44px}
-.water-surface-controls button:hover{background:#ffffff18}
-.water-surface-controls button:disabled{opacity:.55;cursor:default}
-.water-surface-controls [role=status]{font-size:12px;line-height:1.8;margin-left:auto;max-width:29em}
-.earth-entry .surface-note{font-size:12px;line-height:2;margin:15px 0 26px;color:#405a73}
-.earth-paths{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.earth-paths a{display:flex;flex-direction:column;gap:10px;border-top:1px solid #8caab8;padding:18px 6px;transition:background .2s}
-.earth-paths a:hover{background:#fff9}.earth-paths strong{font-size:18px}.earth-paths span{font-size:12px;line-height:1.8}.earth-paths small{font-size:11px;color:#0033ad}
+/* Shared liquid response lives between page backgrounds and readable content. */
+.earth-liquid-field{position:fixed;inset:0;width:100%;height:100%;z-index:1;pointer-events:none;opacity:.7;contain:strict}
+/* Keep text and exact measurements above the reactive light; never move layout boxes. */
+:where(.liquid-experience) :where(h1,h2,h3,h4,p,label,button,input,summary,.value,.new-number,.hero-title,.hero-number,.hero-intro,.giant,.unit,.section-head,.eyebrow,.source,.visual-key,.chapter-nav,.catalog-row,.catalog-result,.catalog-filters,.number-reading,.hero-bottom,.catalog-total,.catalog-level-heading,.exhibit>div,.exhibit>svg){position:relative;z-index:2}
+.liquid-experience :where(button,.catalog-row>a):active{box-shadow:inset 0 0 0 2px #7ecad34d,0 0 0 4px #3fa5c51f}
+.liquid-experience :where(button,.catalog-row>a):focus-visible{outline:3px solid #e7744c;outline-offset:4px}
+.liquid-motion-toggle{border:1px solid #bfc8e0;border-radius:24px;padding:8px 15px;background:white;color:#0033ad;font-size:12px;min-height:44px}
 :where(button,summary,.header-catalog,.back-to-top){min-height:44px}
 input[type=range]{min-height:32px;padding-block:12px;background:transparent}
 .source{padding-block:7px}.science-detail summary{padding-block:12px}
-.catalog-entry:focus-visible,.earth-paths a:focus-visible{outline:3px solid #ef6c35;outline-offset:4px}
-@media(max-width:760px){.earth-entry-head{display:block}.earth-entry-head p{margin-top:16px;font-size:13px}.earth-paths{grid-template-columns:1fr}.earth-paths a{display:grid;grid-template-columns:1fr auto;gap:6px 12px;padding:17px 0}.earth-paths span{grid-column:1/-1;grid-row:2}.earth-paths strong{font-size:17px}.water-surface-controls{padding:12px;gap:8px}.water-surface-controls [role=status]{margin:0;width:100%;font-size:11px}.water-surface-label{left:16px;font-size:10px}.water-surface-controls button{font-size:11px;padding-inline:14px}.section-head>span:last-child{font-size:13px}.learning-badge{font-size:10px}.exhibit .source{font-size:11px}.exhibit .kid-guide p,.exhibit .kid-caution{font-size:13px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.earth-paths a{transition:none}}
+.liquid-paused .earth-liquid-field{visibility:hidden}.liquid-paused :where(button,.catalog-row>a){transition:none}.liquid-paused :where(button,.catalog-row>a):active{transform:none}
+@media(max-width:760px){.liquid-motion-toggle{font-size:11px;margin-left:auto}.section-head>span:last-child{font-size:13px}.learning-badge{font-size:10px}.exhibit .source{font-size:11px}.exhibit .kid-guide p,.exhibit .kid-caution{font-size:13px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.earth-liquid-field{display:none}.liquid-experience :where(button,.catalog-row>a){transition:none}.liquid-experience :where(button,.catalog-row>a):active{transform:none}}
+
+.hero-title,.hero-number,.exhibit.was-seen h2,.exhibit.was-seen .value,.exhibit.was-seen .power-number{animation:none!important;transform:none!important;opacity:1!important}
+.water.in-view #waterSphere{animation:none!important;transform:none!important}
 
 /* Search stays available without making the page beneath the dialog interactive. */
 .menu-search{max-width:720px;padding:24px 0 0}.menu-search label{display:block;font-size:14px;font-weight:600;margin-bottom:10px}.menu-search>div{display:flex;gap:10px}.menu-search input{width:100%;min-width:0;border:1px solid #6481ae;background:#fff;color:#0a1f5c;border-radius:4px;padding:13px 16px;font:inherit;font-size:16px}.menu-search button{border:1px solid #6481ae;border-radius:4px;padding:10px 18px;background:transparent;white-space:nowrap}.menu-search p{font-size:13px;line-height:2}#menuLinks a[hidden]{display:none!important}.menu-top{position:sticky;top:-40px;background:#fff;z-index:2;padding-top:12px}.menu-search input:focus-visible{outline:3px solid #e7744c;outline-offset:3px}
