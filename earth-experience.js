@@ -3,6 +3,9 @@
 (() => {
   const host = document.querySelector('[data-water-surface]');
   if (!host) return;
+  host.earthWaterExperience?.destroy();
+  const lifetime = new AbortController();
+  const listen=(target,type,handler,options={})=>target.addEventListener(type,handler,{...options,signal:lifetime.signal});
   const canvas = host.querySelector('canvas'), context = canvas.getContext('2d', {alpha:false});
   const button = host.querySelector('[data-ripple]'), pause = host.querySelector('[data-water-pause]');
   const status = host.querySelector('[role=status]');
@@ -53,17 +56,19 @@
   function sync(){
     const stopped=paused||globalPaused;
     pause.setAttribute('aria-pressed',String(stopped));pause.textContent=stopped?'水面を動かす':'水面を止める';pause.disabled=globalPaused;
-    if(globalPaused)status.textContent='ページ上の「動かす」で、動きを再開できます。';
+    status.textContent=globalPaused?'ページ上の「動かす」で、動きを再開できます。':paused?'水面を止めています。動かすボタンで始められます。':'画面は、そのまま上下にスクロールできます。';
     button.disabled=stopped;canvas.setAttribute('aria-disabled',String(stopped));schedule();
   }
   function ripple(x=.5,y=.5){if(paused||globalPaused)return;disturb(x,y);status.textContent='ふれた場所から、波が広がります。';schedule();}
-  canvas.addEventListener('pointerdown',e=>{const r=canvas.getBoundingClientRect();ripple((e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height);});
-  canvas.addEventListener('pointermove',e=>{if(e.pointerType==='touch'&&!e.buttons)return;const now=performance.now();if(now-lastPointer<70)return;lastPointer=now;const r=canvas.getBoundingClientRect();ripple((e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height);},{passive:true});
-  canvas.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ripple();}});
-  button.addEventListener('click',()=>ripple());pause.addEventListener('click',()=>{paused=!paused;sync();});
-  reduced.addEventListener('change',e=>{paused=e.matches;sync();});
+  listen(canvas,'pointerdown',e=>{const r=canvas.getBoundingClientRect();ripple((e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height);});
+  listen(canvas,'pointermove',e=>{if(e.pointerType==='touch'&&!e.buttons)return;const now=performance.now();if(now-lastPointer<70)return;lastPointer=now;const r=canvas.getBoundingClientRect();ripple((e.clientX-r.left)/r.width,(e.clientY-r.top)/r.height);},{passive:true});
+  listen(canvas,'keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();ripple();}});
+  listen(button,'click',()=>ripple());listen(pause,'click',()=>{paused=!paused;sync();});
+  listen(reduced,'change',e=>{paused=e.matches;sync();});
   const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;schedule();},{rootMargin:'80px'});observer.observe(host);
   const bodyObserver=new MutationObserver(()=>{const next=document.body.classList.contains('motion-paused');if(next!==globalPaused){globalPaused=next;sync();}});bodyObserver.observe(document.body,{attributes:true,attributeFilter:['class']});
-  document.addEventListener('visibilitychange',schedule);
-  new ResizeObserver(size).observe(canvas);globalPaused=document.body.classList.contains('motion-paused');size();sync();
+  listen(document,'visibilitychange',schedule);
+  const resizeObserver=new ResizeObserver(size);resizeObserver.observe(canvas);
+  host.earthWaterExperience={destroy(){lifetime.abort();observer.disconnect();bodyObserver.disconnect();resizeObserver.disconnect();if(frame)cancelAnimationFrame(frame);frame=0;delete host.earthWaterExperience;}};
+  globalPaused=document.body.classList.contains('motion-paused');size();sync();
 })();
