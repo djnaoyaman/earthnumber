@@ -7,3 +7,7 @@ assert(rule.includes('animation:none!important'));assert(rule.includes('transfor
 assert(css.includes('.water.in-view #waterSphere{animation:none!important;transform:none!important}'));
 for(const p of ['index.html','discoveries.html','exhibits.html','author.html'])assert(fs.readFileSync(p,'utf8').includes('experience.css?v=system1'));
 console.log('PASS standalone removal and stable foreground rules in all four pages');
+
+assert(css.includes(':where(.liquid-experience) :where('),'layer fallback has zero specificity');assert(!css.includes('.liquid-experience :where(h1'),'no generic control position override');assert(fs.readFileSync('catalog.css','utf8').includes('.back-to-top{position:fixed;'),'back-to-top explicit positioning wins');console.log('PASS zero-specificity foreground fallback preserves explicit fixed/absolute controls');
+
+assert(css.includes('.exhibit>div,.exhibit>svg'),'scientific scene roots stay above light field');
