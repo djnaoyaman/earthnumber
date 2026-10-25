@@ -1,15 +1,19 @@
-const fs=require('node:fs'),assert=require('node:assert/strict');
-const html=fs.readFileSync('index.html','utf8'),css=fs.readFileSync('experience.css','utf8');
-assert(!html.includes('class="earth-entry"'),'standalone demo removed');
-assert(!fs.readFileSync('earth-experience.js','utf8').includes('[data-water-surface]'),'shared field is not the removed standalone demo');
-const rule=css.match(/\.hero-title,\.hero-number,\.exhibit\.was-seen h2,\.exhibit\.was-seen \.value,\.exhibit\.was-seen \.power-number\{([^}]+)\}/)[1];
-assert(rule.includes('animation:none!important'));assert(rule.includes('transform:none!important'));assert(rule.includes('opacity:1!important'));
+const fs=require('node:fs'),assert=require('node:assert/strict'),cp=require('node:child_process');
+const css=fs.readFileSync('experience.css','utf8');
+for(const p of ['index.html','discoveries.html','exhibits.html','author.html']){
+ const html=fs.readFileSync(p,'utf8');assert(!html.includes('earth-experience.js'));assert(!html.includes('class="earth-entry"'));assert(html.includes('experience.css?v=restore1'));
+}
+assert(!fs.existsSync('earth-experience.js'),'withdrawn liquid runtime is removed');
+assert(!/earth-liquid|liquid-experience|liquid-motion|pointer|canvas|box-shadow/.test(css),'no liquid overlay, controls or decorative paint');
+assert(!/padding-block|main>section|learning-badge/.test(css),'no withdrawn layout/typography overrides');
+assert(css.includes('.hero-title,.hero-number,.exhibit.was-seen h2,.exhibit.was-seen .value,.exhibit.was-seen .power-number{animation:none!important;transform:none!important;opacity:1!important}'));
 assert(css.includes('.water.in-view #waterSphere{animation:none!important;transform:none!important}'));
-for(const p of ['index.html','discoveries.html','exhibits.html','author.html'])assert(fs.readFileSync(p,'utf8').includes('experience.css?v=ux4'));
-console.log('PASS standalone removal and stable foreground rules in all four pages');
-
-assert(css.includes(':where(.liquid-experience) :where('),'layer fallback has zero specificity');assert(!css.includes('.liquid-experience :where(h1'),'no generic control position override');assert(fs.readFileSync('catalog.css','utf8').includes('.back-to-top{position:fixed;'),'back-to-top explicit positioning wins');console.log('PASS zero-specificity foreground fallback preserves explicit fixed/absolute controls');
-
-assert(css.includes('.exhibit>div,.exhibit>svg'),'scientific scene roots stay above light field');
-
-assert(css.includes('html{scrollbar-gutter:stable}'),'native scrollbar gutter prevents modal-open reflow without fixed pixel padding');
+assert(css.includes('html{scrollbar-gutter:stable}'));
+for(const p of ['style.css','catalog.css','reading.css','visual-review.css','motion.js','extra.js','discoveries-review.js','visual-review.js','catalog-data.js','catalog.js','reading.js'])assert.equal(fs.readFileSync(p,'utf8'),cp.execFileSync('git',['show','5ceb30b:'+p],{encoding:'utf8'}),p+' retains pre-liquid scientific/visual baseline');
+for(const p of ['index.html','discoveries.html']){
+ const old=cp.execFileSync('git',['show','5ceb30b:'+p],{encoding:'utf8'}),now=fs.readFileSync(p,'utf8');
+ const sections=s=>[...s.matchAll(/<section\b[^>]*class="[^"]*exhibit[^"]*"[\s\S]*?<\/section>/g)].map(x=>x[0]);
+ assert.equal(sections(now).length,p==='index.html'?31:3);
+ assert.deepEqual(sections(now),sections(old),p+' exhibit blocks unchanged');
+}
+console.log('PASS liquid removal, four-page loader removal, baseline visuals/models/exhibit blocks, independent stable text and gutter');
