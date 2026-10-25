@@ -28,3 +28,12 @@ if(process.env.RENDER_FRAMES){
  for(let t=0;t<=3604;t+=34){stroke.setTime(t);if(t<=1360&&t%68===0)stroke.doc.events.pointermove({clientX:240+t/1360*720,clientY:400,buttons:1});stroke.run(t);if([1564,2176,3162].includes(t))fs.writeFileSync('/tmp/earth-material-stroke-'+t+'.rgba',stroke.image.data);}
  stroke.win.earthLiquidExperience.destroy();
 }
+
+f=fixture();f.doc.events.pointerdown({clientX:300,clientY:300});
+for(let t=0;t<5000;t+=34)f.run(t);
+f.setTime(6000);f.doc.events.pointermove({clientX:300,clientY:300,buttons:1});
+assert.equal(f.pending.size,0,'stationary pointer adds no repeated circular impulse');
+f.setTime(6100);f.doc.events.pointermove({clientX:600,clientY:300,buttons:1});f.run(6134);
+assert.equal(f.pending.size,1,'directional movement creates a wake');
+assert(f.image.data.every(Number.isFinite));f.win.earthLiquidExperience.destroy();
+console.log('PASS stationary gesture injects no energy; movement creates a finite directional wake');
