@@ -1,0 +1,9 @@
+/* Approved EN08 + L03 final C. No exhibit typography, geometry or motion changes. */
+header .brand{display:inline-flex;flex:0 0 auto;align-items:center;line-height:0;letter-spacing:normal;min-height:48px}
+.brand-lockup{display:block;width:188px;height:auto;max-width:100%;object-fit:contain}
+header .brand-lockup{width:188px;aspect-ratio:360/154}
+footer .footer-brand{display:inline-flex;align-items:center;min-width:125px}
+footer .footer-brand .brand-lockup{width:144px}
+.brand-updated{font-size:10px;line-height:1.6;white-space:normal;color:inherit}
+@media(max-width:760px){header .brand-lockup{width:142px}header .brand{min-height:54px}header .header-note{display:none}footer .footer-brand .brand-lockup{width:130px}}
+@media(max-width:380px){header .brand-lockup{width:130px}header .brand{min-height:52px}header{column-gap:10px}}
