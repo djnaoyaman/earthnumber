@@ -1,0 +1,27 @@
+name: Brand review
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  brand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python brand-check.py
+      - run: node tests/menu-ux.cjs && node tests/not-found.cjs && node tests/stable-layout.cjs
+      - run: npm install --no-save --ignore-scripts playwright
+      - run: npx playwright install --with-deps chromium
+      - run: mkdir -p /tmp/brand-preview/earthnumber && cp -a . /tmp/brand-preview/earthnumber/ && python -m http.server 8765 --directory /tmp/brand-preview > /tmp/brand-server.log 2>&1 &
+      - run: node brand-browser.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: brand-review
+          path: brand-shots
