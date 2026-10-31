@@ -50,3 +50,16 @@ for entry in catalog:
  page = Page(); page.feed((P/(target.path or 'index.html')).read_text())
  assert any(a.get('id') == target.fragment for _, a in page.tags), entry['href']
 print('PASS catalog count, title/description/OGP/X labels, JSON-LD inventory and all 34 DOM targets')
+
+# Page metadata dates must agree without overwriting the historical brand revision.
+import xml.etree.ElementTree as ET
+page_date = collection['dateModified']
+visible = re.search(r'class="brand-updated">最終更新：<time datetime="([^"]+)"', index)[1]
+assert visible == page_date
+sitemap = ET.parse(P/'sitemap.xml')
+ns = {'s': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
+root_row = next(row for row in sitemap.getroot() if row.find('s:loc', ns).text == 'https://djnaoyaman.github.io/earthnumber/')
+assert root_row.find('s:lastmod', ns).text == page_date
+assert 'ブランド表示改訂：<time datetime="2026-10-31">2026.10.31</time>' in index
+assert m['description'] == meta['description']
+print('PASS page date/JSON-LD/sitemap coherence, preserved brand revision and manifest description')
