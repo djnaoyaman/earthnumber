@@ -15,4 +15,20 @@ for(const width of [320,390,1280])for(const file of ['index.html','exhibits.html
  }
  assert(!errors.length,errors.join('\n'));report.push({file,width,errors,logo:true,overflow:false,overlap:false});await page.close();
 }
+// Audit the no-result path with ordinary motion as well as reduced-motion layouts.
+const liveLike=await browser.newPage({viewport:{width:1280,height:900},reducedMotion:'no-preference'});
+await liveLike.route('**/*',r=>r.request().url().startsWith('http://127.0.0.1:8765/')?r.continue():r.abort());
+await liveLike.goto('http://127.0.0.1:8765/earthnumber/index.html');
+await liveLike.locator('#menuBtn').click();
+await liveLike.locator('#menuSearch').fill('zzzzzz');
+assert(await liveLike.locator('#menuEmpty').isVisible(),'no-result explanation visible');
+assert.match(await liveLike.locator('#menuSearchCount').textContent(),/^0 \/ 34/);
+await liveLike.locator('#clearMenuSearch').click();
+assert.match(await liveLike.locator('#menuSearchCount').textContent(),/^34 \/ 34/);
+await liveLike.keyboard.press('Escape');
+assert(await liveLike.locator('#menu').evaluate(e=>e.hidden),'Escape restores main view');
+assert(await liveLike.locator('#menuBtn').evaluate(e=>e===document.activeElement),'focus returns to opener');
+await liveLike.screenshot({path:'brand-shots/menu-search-recovery-1280.png'});
+report.push({file:'index.html',width:1280,reducedMotion:false,noResults:true,clear:true,escape:true,focusReturn:true});
+await liveLike.close();
 fs.writeFileSync('brand-shots/report.json',JSON.stringify(report,null,2));await browser.close();})();
