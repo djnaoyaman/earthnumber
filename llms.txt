@@ -5,7 +5,7 @@
 ## Primary pages
 
 - [ホーム](https://djnaoyaman.github.io/earthnumber/): 31展示と出典・推定条件
-- [作者と作品](https://djnaoyaman.github.io/earthnumber/author.html): 宮崎直哉のプロフィール
+- [この図鑑について](https://djnaoyaman.github.io/earthnumber/author.html): 制作意図・編集方針と作者へのリンク
 - [全文テキスト](https://djnaoyaman.github.io/earthnumber/llms-full.txt): 展示内容と出典を読むためのテキスト
 
 ## Reading guidance
@@ -100,3 +100,4 @@ https://djnaoyaman.github.io/earthnumber/exhibits.html
 
 ## 読みやすさ
 全34展示を小学4年生を目安に編集。難しい言葉と単位のふりがな、動かし方、図の見方、見積もりの注意点を掲載。動く図は測定値そのものではなく、本文に示した条件で計算した模型です。
+
